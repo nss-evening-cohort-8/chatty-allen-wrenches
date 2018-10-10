@@ -1,3 +1,13 @@
 body{
     background-color: hotpink;
 }
+
+footer {
+    margin-bottom: 50px;
+}
+
+#darkTheme, #sendButton, 
+#clearMessages, #customTheme, 
+#largeText {
+    border: solid white 1px;
+};
