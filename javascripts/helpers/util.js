@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 console.log("util.js working");
 
 const printToDom = (stringToPrint) => {
