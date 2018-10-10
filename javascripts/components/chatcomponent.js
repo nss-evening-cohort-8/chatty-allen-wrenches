@@ -1,4 +1,5 @@
 import{printToDom, printToDomEdit} from '../helpers/util.js';
+import { editEvent } from '../eventlisteners.js';
 
 let messagesArray=[];
 
@@ -65,6 +66,7 @@ const messagesBuilder = (messagesArray) => {
 
     }
     printToDomEdit(newString,'messages');
+    editEvent();
 }
 
 function newMessage() {
@@ -113,4 +115,4 @@ function saveEditMessage() {
     }
 }
 
-export {getMessagesz, setMessages, messagesBuilder, saveEditMessage};
+export {getMessagesz, setMessages, messagesBuilder, saveEditMessage, beginEditMessage};
