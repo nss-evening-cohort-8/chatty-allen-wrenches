@@ -29,7 +29,7 @@ function saveEditMessage() {
     if(editing !== 0) {
         for(let i = 0; i < messagesArray.length; i++) {
             if(messagesArray[i].id === editing) {
-                messagesArray[i].message = document.getElementById('input');
+                messagesArray[i].message = document.getElementById('input').value;
                 messagesArray[i].time = event.timeStamp;
                 editing = 0;
                 break;
