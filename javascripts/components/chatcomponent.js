@@ -2,6 +2,44 @@ import{printToDom, printToDomEdit} from '../helpers/util.js'
 
 let messagesArray=[];
 
+let userName = '';
+let messageString = '';
+let timeStamp = '';
+let idCounter = 0;
+let deletedCounter = 0;
+
+function setIdCounter() {
+    idCounter++;
+}
+
+function getIdCounter() {
+    return idCounter;
+}
+
+function setUserName(newValue) {
+    userName = newValue;
+}
+
+function getUserName() {
+    return userName;
+}
+
+function setMessageString(newValue) {
+    messageString = newValue;
+}
+
+function getMessageString() {
+    return messageString;
+}
+
+function setTimeStamp(newValue) {
+    timeStamp = newValue;
+}
+
+function getTimeStamp() {
+    return timeStamp;
+}
+
 const setMessages = (newArray) => {
     messagesArray=newArray;
 };
