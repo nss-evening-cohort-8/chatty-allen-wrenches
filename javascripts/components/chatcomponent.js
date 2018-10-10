@@ -50,8 +50,6 @@ const getMessagesz = () => {
 }
 
 const messagesBuilder = (messagesArray) => {
-    console.log('messagesBuilder running');
-    console.log(messagesArray);
     let newString = '';
     for(let i=0; i<messagesArray.length;i++){
     //newString+= `<div class="border border-primary">`;
@@ -65,8 +63,8 @@ const messagesBuilder = (messagesArray) => {
     //newString+= `</div>`;
 
 
-}
-printToDomEdit(newString,'messages');
+    }
+    printToDomEdit(newString,'messages');
 }
 
 function newMessage() {
@@ -75,7 +73,6 @@ function newMessage() {
     setTimeStamp(event.timeStamp);
     setIdCounter();
     newMsg = {id: getIdCounter(), name: getUserName(), message: getMessageString(), time: getTimeStamp()};
-    console.log('newMsg',newMsg);
     pushNewMessage();
 }
 
@@ -86,8 +83,6 @@ function pushNewMessage() {
         tempMsg.shift();
     }
     setMessages(tempMsg);
-    console.log('tempMsg',tempMsg);
-    console.log('messageArray',messagesArray);
 }
 
 function beginEditMessage() {

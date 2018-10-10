@@ -3,7 +3,6 @@ import {saveEditMessage, messagesBuilder, getMessagesz} from './components/chatc
 function messageSubmit() {
     document.getElementById('inputForm').addEventListener('submit', function() {
         event.preventDefault();
-        console.log(event.target);
         saveEditMessage();
         messagesBuilder(getMessagesz());
         document.getElementById('input').value = '';
