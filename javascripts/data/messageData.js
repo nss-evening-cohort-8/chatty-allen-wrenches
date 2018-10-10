@@ -1,9 +1,10 @@
-import{setMessages,getMessagesz,messagesBuilder} from '../components/petComponent.js'
+import{setMessages,getMessagesz,messagesBuilder} from '../components/chatcomponent.js'
 
 function executeThisCodeAfterFileLoaded () {
     const data = JSON.parse(this.responseText);
     setMessages(data.messagesArray);
     messagesBuilder(getMessagesz());
+    console.log(data.messagesArray)
 }
 
 function executeThisCodeIfXhrFails () {
