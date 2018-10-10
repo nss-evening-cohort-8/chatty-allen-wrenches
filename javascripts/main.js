@@ -1,1 +1,3 @@
-console.log('this is main js')
+import{getMessages} from './data/messageData.js'
+
+getMessages();
