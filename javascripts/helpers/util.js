@@ -8,5 +8,4 @@ const printToDomEdit = (stringToPrint) => {
     printHere.innerHTML = stringToPrint;
 }
 
-
 export {printToDom, printToDomEdit};
