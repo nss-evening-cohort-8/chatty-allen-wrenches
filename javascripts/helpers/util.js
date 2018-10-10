@@ -1,1 +1,13 @@
-console.log('this is util js')
+console.log("util.js working");
+
+const printToDom = (stringToPrint) => {
+    const printHere = document.getElementById("messages");
+    printHere.innerHTML += stringToPrint;
+}
+
+const printToDomEdit = (stringToPrint) => {
+    const printHere = document.getElementById("messages");
+    printHere.innerHTML = stringToPrint;
+}
+
+export {printToDom, printToDomEdit};
