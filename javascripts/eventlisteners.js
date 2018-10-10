@@ -1,6 +1,22 @@
-import { deleteMessage } from "./components/chatcomponent.js";
+import {saveEditMessage, messagesBuilder, getMessagesz, beginEditMessage, deleteMessage} from './components/chatcomponent.js';
 
-console.log('this is event listeners js');
+function messageSubmit() {
+    document.getElementById('inputForm').addEventListener('submit', function() {
+        event.preventDefault();
+        saveEditMessage();
+        messagesBuilder(getMessagesz());
+        document.getElementById('input').value = '';
+    })
+}
+
+function editEvent() {
+    let editors = document.getElementsByClassName('editButton');
+    for(let i=0; i < editors.length; i++) {
+        editors[i].addEventListener('click', function() {
+            beginEditMessage(event);
+        })
+    }
+}
 
 function deleteEvent() {
     let deleters = document.getElementsByClassName('deleteButton');
@@ -11,4 +27,4 @@ function deleteEvent() {
     }
 }
 
-export {deleteEvent};
+export {messageSubmit, editEvent, deleteEvent};
