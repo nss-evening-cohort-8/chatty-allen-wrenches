@@ -8,13 +8,29 @@
     <title>The Chatroom</title>
 </head>
 <body>
-<div id="bigDiv" class="col-8 offset-md-2 border border-primary">
-    <div id="messages"></div>
-    <form id='inputForm'>
-        <input type="text" id='input'>
-    </form>
-</div>
-</body>
+    <div id="bigDiv" class="col-8 offset-md-2 border border-primary">
+        <div id="messages"></div>
+    </div>
+    <footer class="fixed-bottom container-fluid text-center">
+        <div class="form-row justify-content-center mb-3">
+            <select class="custom-select-primary col-1" id="inputGroupSelect01">
+                <option selected>User</option>
+                <option value="1">Aftan</option>
+                <option value="2">Austin</option>
+                <option value="3">Rich</option>
+                <option value="4">Rob</option>
+                <option value="5">Zoe</option>
+            </select>
+            <form id='inputForm'>
+                <input class="form-control col-7" id='input' type="text" placeholder="Type here...">
+            </form>
+            <button class="btn btn-rounded btn-info mr-1 ml-1"id="sendButton">Send</button> 
+        </div>
+        <button class="btn btn-rounded btn-dark" id="darkTheme">Dark Theme</button>
+        <button class="btn btn-rounded btn-secondary" id="largeText">Large Text</button>
+        <button class="btn btn-rounded btn-primary" id="customTheme">Customize Theme</button>
+        <button class="btn btn-rounded btn-danger" id="clearMessages">Clear Message Board</button>
+    </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
