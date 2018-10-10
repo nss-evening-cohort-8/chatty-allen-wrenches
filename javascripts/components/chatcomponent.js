@@ -1,6 +1,6 @@
 
 import{printToDom, printToDomEdit} from '../helpers/util.js';
-import { editEvent } from '../eventlisteners.js';
+import { editEvent, deleteEvent } from '../eventlisteners.js';
 
 let messagesArray=[];
 
@@ -68,6 +68,7 @@ const messagesBuilder = (messagesArray) => {
     }
     printToDomEdit(newString,'messages');
     editEvent();
+    deleteEvent();
 }
 
 function newMessage() {
@@ -118,13 +119,15 @@ function saveEditMessage() {
 
 function deleteMessage() {
     let deleteMe = event.target.closest('.messageDiv').id;
+    console.log('deleteMe', deleteMe);
     for(let i = 0; i < messagesArray.length; i++) {
-        if(messagesArray[i].id === deleteMe) {
+        console.log('messagesArray', messagesArray[i]);
+        if(messagesArray[i].id == deleteMe) {
             messagesArray.splice(i, 1);
             break;
         }
     }
-    messageBuilder();
+    messagesBuilder(getMessagesz());
 }
 
 export {getMessagesz, setMessages, messagesBuilder, saveEditMessage, beginEditMessage, deleteMessage};
