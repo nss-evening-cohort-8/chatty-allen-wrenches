@@ -12,4 +12,8 @@ const messagesBuilder = (messagesArray) => {
     console.log('this is messages Builder function')
 }
 
-export{getMessagesz,setMessages,messagesBuilder}
+function editMessage() {
+    
+}
+
+export{getMessagesz,setMessages,messagesBuilder, editMessage};
