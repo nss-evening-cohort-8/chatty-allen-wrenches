@@ -1,13 +1,13 @@
-import {setUserName, setMessageString, setTimeStamp, setIdCounter, getUserName, getMessageString, getTimeStamp, getIdCounter} from './components/chatcomponent.js';
+import {saveEditMessage, messagesBuilder, getMessagesz} from './components/chatcomponent.js';
 
-function newMessage() {
-    document.getElementById('input').addEventListener('submit', function() {
-        setUserName();
-        setMessageString(document.getElementById('input').value);
-        setTimeStamp(event.timeStamp);
-        setIdCounter();
-        let newMsg = {name: getUserName(), message: getMessageString(), time: getTimeStamp(), id: getIdCounter()};
+function messageSubmit() {
+    document.getElementById('inputForm').addEventListener('submit', function() {
+        event.preventDefault();
+        console.log(event.target);
+        saveEditMessage();
+        messagesBuilder(getMessagesz());
+        document.getElementById('input').value = '';
     })
 }
 
-export {newMessage};
+export {messageSubmit};

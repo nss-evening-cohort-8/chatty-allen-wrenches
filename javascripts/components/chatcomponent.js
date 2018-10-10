@@ -1,12 +1,13 @@
-import{printToDom, printToDomEdit} from '../helpers/util.js'
+import{printToDom, printToDomEdit} from '../helpers/util.js';
 
 let messagesArray=[];
 
 let userName = '';
 let messageString = '';
 let timeStamp = '';
-let idCounter = 0;
-let deletedCounter = 0;
+let idCounter = 5;
+let editing = 'no';
+let newMsg;
 
 function setIdCounter() {
     idCounter++;
@@ -49,10 +50,12 @@ const getMessagesz = () => {
 }
 
 const messagesBuilder = (messagesArray) => {
+    console.log('messagesBuilder running');
+    console.log(messagesArray);
     let newString = '';
     for(let i=0; i<messagesArray.length;i++){
     //newString+= `<div class="border border-primary">`;
-    newString += `<div class="col-12 d-flex justify-content-center " id="${messagesArray[i].id}">`
+    newString += `<div class="col-12 d-flex justify-content-center messageDiv" id="${messagesArray[i].id}">`
     newString+= `<h4 class="nameClass">${messagesArray[i].name}</h4>`;
     newString+= `<p class="card-title">${messagesArray[i].message}</p>`;
     newString+= `<p class="card-title">${messagesArray[i].time}</p>`;
@@ -63,7 +66,56 @@ const messagesBuilder = (messagesArray) => {
 
 
 }
-printToDom(newString,'messages');
+printToDomEdit(newString,'messages');
 }
 
-export{getMessagesz,setMessages,messagesBuilder}
+function newMessage() {
+    setUserName('Waka Flaka');
+    setMessageString(document.getElementById('input').value);
+    setTimeStamp(event.timeStamp);
+    setIdCounter();
+    newMsg = {id: getIdCounter(), name: getUserName(), message: getMessageString(), time: getTimeStamp()};
+    console.log('newMsg',newMsg);
+    pushNewMessage();
+}
+
+function pushNewMessage() {
+    let tempMsg = getMessagesz();
+    tempMsg.push(newMsg);
+    if(tempMsg.length > 20) {
+        tempMsg.shift();
+    }
+    setMessages(tempMsg);
+    console.log('tempMsg',tempMsg);
+    console.log('messageArray',messagesArray);
+}
+
+function beginEditMessage() {
+    let editMe = event.target.closest('.messageDiv').id;
+    for(let i = 0; i < messagesArray.length; i++) {
+        if(messagesArray[i].id === editMe) {
+            document.getElementById('input').value = messagesArray[i].message;
+            document.getElementById('input').focus;
+            editing = editMe;
+            break;
+        }
+    }
+}
+
+function saveEditMessage() {
+    if(editing !== 'no') {
+        for(let i = 0; i < messagesArray.length; i++) {
+            if(messagesArray[i].id === editing) {
+                messagesArray[i].message = document.getElementById('input').value;
+                messagesArray[i].time = event.timeStamp;
+                editing = 'no';
+                break;
+            }
+        }
+    }
+    else {
+        newMessage();
+    }
+}
+
+export {getMessagesz, setMessages, messagesBuilder, saveEditMessage};
