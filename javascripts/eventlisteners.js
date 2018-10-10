@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import {saveEditMessage, messagesBuilder, getMessagesz} from './components/chatcomponent.js';
 
 function messageSubmit() {
@@ -11,3 +12,7 @@ function messageSubmit() {
 }
 
 export {messageSubmit};
+=======
+import {printToDom, printToDomEdit} from './helpers/util.js'
+
+>>>>>>> master
