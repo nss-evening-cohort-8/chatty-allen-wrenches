@@ -57,8 +57,8 @@ const messagesBuilder = (messagesArray) => {
     newString+= `<h4 class="nameClass">${messagesArray[i].name}</h4>`;
     newString+= `<p class="card-title">${messagesArray[i].message}</p>`;
     newString+= `<p class="card-title">${messagesArray[i].time}</p>`;
-    newString+= `<button type="button" class="btn btn-secondary" id="editButton">Edit</button>`
-    newString+= `<button type="button" class="btn btn-secondary" id="deleteButton">Delete</button>`
+    newString+= `<button type="button" class="btn btn-secondary editButton" id="editButton">Edit</button>`
+    newString+= `<button type="button" class="btn btn-secondary deleteButton" id="deleteButton">Delete</button>`
     newString+= `</div>`;
     //newString+= `</div>`;
 
