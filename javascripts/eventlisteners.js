@@ -1,1 +1,2 @@
-console.log('this is event listeners js');
+import {printToDom, printToDomEdit} from './helpers/util.js'
+
