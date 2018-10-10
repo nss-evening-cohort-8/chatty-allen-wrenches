@@ -19,16 +19,23 @@ function beginEditMessage() {
     for(let i = 0; i < messagesArray.length; i++) {
         if(messagesArray[i].id === editMe) {
             document.getElementById('input').value = messagesArray[i].message;
-            editing = 1;
+            document.getElementById('input').focus;
+            editing = editMe;
             break;
         }
 }
 
 function saveEditMessage() {
-    if(editing === 1) {
-        messagesArray[].message = document.getElementById('input');
-        messagesArray[].message = event.timeStamp;
+    if(editing !== 0) {
+        for(let i = 0; i < messagesArray.length; i++) {
+            if(messagesArray[i].id === editing) {
+                messagesArray[i].message = document.getElementById('input');
+                messagesArray[i].time = event.timeStamp;
+                editing = 0;
+                break;
+            }
+        }
     }
 }
 
-export{getMessagesz,setMessages,messagesBuilder, beginEditMessage};
+export{getMessagesz,setMessages,messagesBuilder, beginEditMessage, saveEditMessage};
