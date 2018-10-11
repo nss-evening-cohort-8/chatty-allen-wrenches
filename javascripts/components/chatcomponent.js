@@ -92,7 +92,7 @@ function pushNewMessage() {
 function beginEditMessage() {
     let editMe = event.target.closest('.messageDiv').id;
     for(let i = 0; i < messagesArray.length; i++) {
-        if(messagesArray[i].id === editMe) {
+        if(messagesArray[i].id == editMe) {
             document.getElementById('input').value = messagesArray[i].message;
             document.getElementById('input').focus;
             editing = editMe;
@@ -104,7 +104,7 @@ function beginEditMessage() {
 function saveEditMessage() {
     if(editing !== 'no') {
         for(let i = 0; i < messagesArray.length; i++) {
-            if(messagesArray[i].id === editing) {
+            if(messagesArray[i].id == editing) {
                 messagesArray[i].message = document.getElementById('input').value;
                 messagesArray[i].time = event.timeStamp;
                 editing = 'no';
