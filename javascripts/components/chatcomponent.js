@@ -60,8 +60,8 @@ const messagesBuilder = (messagesArray) => {
     newString+= `<p class="nameClass flex-fill font-weight-bold">${messagesArray[i].name}:</p>`;
     newString+= `<p class="card-title flex-fill" id="messageId${[i]}">${messagesArray[i].message}</p>`;
     newString+= `<p class="card-title flex-fill font-weight-light">${messagesArray[i].time}</p>`;
-    newString+= `<button type="button" class="btn btn-primary btn-sm" id="editButton">Edit</button>`
-    newString+= `<button type="button" class="btn btn-secondary btn-sm" id="deleteButton">Delete</button>`
+    newString+= `<button type="button" class="btn btn-primary btn-sm editButton" id="editButton">Edit</button>`
+    newString+= `<button type="button" class="btn btn-secondary btn-sm deleteButton" id="deleteButton">Delete</button>`
     // newString+= `</div>`;
 
     newString+= `</div>`;
