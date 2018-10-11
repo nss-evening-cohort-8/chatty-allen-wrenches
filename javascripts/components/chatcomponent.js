@@ -19,8 +19,8 @@ function getIdCounter() {
     return idCounter;
 }
 
-function setUserName(newValue) {
-    userName = newValue;
+function setUserName() {
+    userName = document.getElementById('inputUserNames')[document.getElementById('inputUserNames').selectedIndex].value;
 }
 
 function getUserName() {
@@ -72,7 +72,7 @@ const messagesBuilder = (messagesArray) => {
 }
 
 function newMessage() {
-    setUserName('Waka Flaka');
+    setUserName();
     setMessageString(document.getElementById('input').value);
     setTimeStamp(event.timeStamp);
     setIdCounter();
