@@ -4,31 +4,31 @@
             "id": "0",
             "name": "Aftan",
             "message": "I like tacos",
-            "time": "18:55:31"
+            "time": "6:55"
         },
         {
             "id": "1",
             "name": "Austin",
             "message": "I like movies",
-            "time": "18:58:32"
+            "time": "6:58"
         },
         {
             "id": "2",
             "name": "Rob",
             "message": "I like pizza",
-            "time": "18:59:46"
+            "time": "6:59"
         },
         {
             "id": "3",
             "name": "Rich",
             "message": "I like to party",
-            "time": "19:00:21"
+            "time": "7:00"
         },
         {
             "id": "4",
             "name": "Zoe",
             "message": "I like pie",
-            "time": "19:32:43"
+            "time": "7:32"
         }
     ]
 }
