@@ -1,5 +1,3 @@
-console.log("util.js working");
-
 const printToDom = (stringToPrint) => {
     const printHere = document.getElementById("messages");
     printHere.innerHTML += stringToPrint;
