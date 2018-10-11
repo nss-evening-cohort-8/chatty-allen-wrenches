@@ -11,35 +11,35 @@ let idCounter = 5;
 let editing = 'no';
 let newMsg;
 
-function setIdCounter() {
+const setIdCounter = () => {
     idCounter++;
 }
 
-function getIdCounter() {
+const getIdCounter = () => {
     return idCounter;
 }
 
-function setUserName() {
+const setUserName = () => {
     userName = document.getElementById('inputUserNames')[document.getElementById('inputUserNames').selectedIndex].value;
 }
 
-function getUserName() {
+const getUserName = () => {
     return userName;
 }
 
-function setMessageString(newValue) {
+const setMessageString = (newValue) => {
     messageString = newValue;
 }
 
-function getMessageString() {
+const getMessageString = () => {
     return messageString;
 }
 
-function setTimeStamp(newValue) {
+const setTimeStamp = (newValue) => {
     timeStamp = newValue;
 }
 
-function getTimeStamp() {
+const getTimeStamp = () => {
     return timeStamp;
 }
 
@@ -73,7 +73,7 @@ const messagesBuilder = (messagesArray) => {
     deleteEvent();
 }
 
-function newMessage() {
+const newMessage = () => {
     setUserName();
     setMessageString(document.getElementById('input').value);
     setTimeStamp(moment().format('LT'));
@@ -82,7 +82,7 @@ function newMessage() {
     pushNewMessage();
 }
 
-function pushNewMessage() {
+const pushNewMessage = () => {
     let tempMsg = getMessagesz();
     tempMsg.push(newMsg);
     if(tempMsg.length > 20) {
@@ -91,7 +91,7 @@ function pushNewMessage() {
     setMessages(tempMsg);
 }
 
-function beginEditMessage() {
+const beginEditMessage = () => {
     let editMe = event.target.closest('.messageDiv').id;
     for(let i = 0; i < messagesArray.length; i++) {
         if(messagesArray[i].id == editMe) {
@@ -103,7 +103,7 @@ function beginEditMessage() {
     }
 }
 
-function saveEditMessage() {
+const saveEditMessage = () => {
     if(editing !== 'no') {
         for(let i = 0; i < messagesArray.length; i++) {
             if(messagesArray[i].id == editing) {
@@ -119,7 +119,7 @@ function saveEditMessage() {
     }
 }
 
-function deleteMessage() {
+const deleteMessage = () => {
     let deleteMe = event.target.closest('.messageDiv').id;
     console.log('deleteMe', deleteMe);
     for(let i = 0; i < messagesArray.length; i++) {
