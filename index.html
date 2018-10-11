@@ -8,12 +8,12 @@
     <title>The Chatroom</title>
 </head>
 <body>
-    <div id="bigDiv" class="col-8 offset-md-2 border border-primary">
+    <div id="bigDiv" class="col-8 offset-md-2 d-flex justify-content-around">
         <div id="messages"></div>
     </div>
     <footer class="fixed-bottom container-fluid text-center">
         <div class="form-row justify-content-center mb-3">
-            <select class="custom-select-primary col-1" id='inputUserNames'">
+            <select class="custom-select-primary col-1" id='inputUserNames'>
                 <option selected>User</option>
                 <option value="Aftan">Aftan</option>
                 <option value="Austin">Austin</option>
@@ -28,7 +28,32 @@
         </div>
         <button class="btn btn-rounded btn-dark" id="darkTheme">Dark Theme</button>
         <button class="btn btn-rounded btn-secondary" id="largeText">Large Text</button>
-        <button class="btn btn-rounded btn-primary" id="customTheme">Customize Theme</button>
+        <button class="btn btn-rounded btn-primary" data-toggle="modal" data-tartet="modalTarget" id="customTheme">Customize Theme</button>
+        <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Launch demo modal
+      </button>
+      
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
         <button class="btn btn-rounded btn-danger" id="clearMessages">Clear Message Board</button>
     </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

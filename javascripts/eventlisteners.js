@@ -20,6 +20,7 @@ const messageSubmitClick = () => {
 const makeDark = () => {
     document.getElementById('darkTheme').addEventListener("click", () => {
         document.body.style.background = "rgb(36, 34, 34)";
+        document.getElementById('bigDiv').style.background = "rgb(36, 34, 34)";
         document.getElementById('messages').style.color = "white";
     })
 }
