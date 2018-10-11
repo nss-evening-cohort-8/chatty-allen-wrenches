@@ -74,7 +74,7 @@ const messagesBuilder = (messagesArray) => {
 function newMessage() {
     setUserName();
     setMessageString(document.getElementById('input').value);
-    setTimeStamp(moment(event.timeStamp).format('LT'));
+    setTimeStamp(moment().format('LT'));
     setIdCounter();
     newMsg = {id: getIdCounter(), name: getUserName(), message: getMessageString(), time: getTimeStamp()};
     pushNewMessage();
@@ -106,7 +106,7 @@ function saveEditMessage() {
         for(let i = 0; i < messagesArray.length; i++) {
             if(messagesArray[i].id == editing) {
                 messagesArray[i].message = document.getElementById('input').value;
-                messagesArray[i].time = event.timeStamp;
+                messagesArray[i].time = moment().format('LT');
                 editing = 'no';
                 break;
             }
