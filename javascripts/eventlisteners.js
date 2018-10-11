@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import {saveEditMessage, messagesBuilder, getMessagesz, setMessages} from './components/chatcomponent.js';
-=======
-import {saveEditMessage, messagesBuilder, getMessagesz, beginEditMessage, deleteMessage} from './components/chatcomponent.js';
->>>>>>> master
+import {saveEditMessage, messagesBuilder, getMessagesz, setMessages, beginEditMessage, deleteMessage} from './components/chatcomponent.js';
 
 function messageSubmit() {
     document.getElementById('inputForm').addEventListener('submit', function() {
