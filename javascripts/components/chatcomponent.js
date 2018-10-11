@@ -74,7 +74,7 @@ const messagesBuilder = (messagesArray) => {
 function newMessage() {
     setUserName();
     setMessageString(document.getElementById('input').value);
-    setTimeStamp(event.timeStamp);
+    setTimeStamp(moment(event.timeStamp).format('LT'));
     setIdCounter();
     newMsg = {id: getIdCounter(), name: getUserName(), message: getMessageString(), time: getTimeStamp()};
     pushNewMessage();
