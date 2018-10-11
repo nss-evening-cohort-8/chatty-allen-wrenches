@@ -1,4 +1,6 @@
+
 import{printToDom, printToDomEdit} from '../helpers/util.js';
+import { editEvent, deleteEvent } from '../eventlisteners.js';
 
 let messagesArray=[];
 
@@ -17,8 +19,8 @@ function getIdCounter() {
     return idCounter;
 }
 
-function setUserName(newValue) {
-    userName = newValue;
+function setUserName() {
+    userName = document.getElementById('inputUserNames')[document.getElementById('inputUserNames').selectedIndex].value;
 }
 
 function getUserName() {
@@ -50,8 +52,6 @@ const getMessagesz = () => {
 }
 
 const messagesBuilder = (messagesArray) => {
-    console.log('messagesBuilder running');
-    console.log(messagesArray);
     let newString = '';
     for(let i=0; i<messagesArray.length;i++){
     //newString+= `<div class="border border-primary">`;
@@ -63,20 +63,22 @@ const messagesBuilder = (messagesArray) => {
     newString+= `<button type="button" class="btn btn-primary btn-sm" id="editButton">Edit</button>`
     newString+= `<button type="button" class="btn btn-secondary btn-sm" id="deleteButton">Delete</button>`
     // newString+= `</div>`;
+
     newString+= `</div>`;
 
 
-}
-printToDomEdit(newString,'messages');
+    }
+    printToDomEdit(newString,'messages');
+    editEvent();
+    deleteEvent();
 }
 
 function newMessage() {
-    setUserName('Waka Flaka');
+    setUserName();
     setMessageString(document.getElementById('input').value);
     setTimeStamp(event.timeStamp);
     setIdCounter();
     newMsg = {id: getIdCounter(), name: getUserName(), message: getMessageString(), time: getTimeStamp()};
-    console.log('newMsg',newMsg);
     pushNewMessage();
 }
 
@@ -87,14 +89,12 @@ function pushNewMessage() {
         tempMsg.shift();
     }
     setMessages(tempMsg);
-    console.log('tempMsg',tempMsg);
-    console.log('messageArray',messagesArray);
 }
 
 function beginEditMessage() {
     let editMe = event.target.closest('.messageDiv').id;
     for(let i = 0; i < messagesArray.length; i++) {
-        if(messagesArray[i].id === editMe) {
+        if(messagesArray[i].id == editMe) {
             document.getElementById('input').value = messagesArray[i].message;
             document.getElementById('input').focus;
             editing = editMe;
@@ -106,7 +106,7 @@ function beginEditMessage() {
 function saveEditMessage() {
     if(editing !== 'no') {
         for(let i = 0; i < messagesArray.length; i++) {
-            if(messagesArray[i].id === editing) {
+            if(messagesArray[i].id == editing) {
                 messagesArray[i].message = document.getElementById('input').value;
                 messagesArray[i].time = event.timeStamp;
                 editing = 'no';
@@ -119,4 +119,17 @@ function saveEditMessage() {
     }
 }
 
-export {getMessagesz, setMessages, messagesBuilder, saveEditMessage};
+function deleteMessage() {
+    let deleteMe = event.target.closest('.messageDiv').id;
+    console.log('deleteMe', deleteMe);
+    for(let i = 0; i < messagesArray.length; i++) {
+        console.log('messagesArray', messagesArray[i]);
+        if(messagesArray[i].id == deleteMe) {
+            messagesArray.splice(i, 1);
+            break;
+        }
+    }
+    messagesBuilder(getMessagesz());
+}
+
+export {getMessagesz, setMessages, messagesBuilder, saveEditMessage, beginEditMessage, deleteMessage};
