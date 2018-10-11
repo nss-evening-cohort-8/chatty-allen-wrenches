@@ -55,14 +55,15 @@ const messagesBuilder = (messagesArray) => {
     let newString = '';
     for(let i=0; i<messagesArray.length;i++){
     //newString+= `<div class="border border-primary">`;
-    newString += `<div class="col-12 d-flex justify-content-center messageDiv" id="${messagesArray[i].id}">`
-    newString+= `<h4 class="nameClass">${messagesArray[i].name}</h4>`;
-    newString+= `<p class="card-title">${messagesArray[i].message}</p>`;
-    newString+= `<p class="card-title">${messagesArray[i].time}</p>`;
-    newString+= `<button type="button" class="btn btn-secondary" id="editButton">Edit</button>`
-    newString+= `<button type="button" class="btn btn-secondary" id="deleteButton">Delete</button>`
+    newString += `<div class="col-12 d-flex justify-content-center border border-bottom-0 messageDiv bg-light" id="${messagesArray[i].id}">`
+    // newString+= `<div class="d-flex justify-content-around">`;
+    newString+= `<p class="nameClass flex-fill font-weight-bold">${messagesArray[i].name}:</p>`;
+    newString+= `<p class="card-title flex-fill" id="messageId${[i]}">${messagesArray[i].message}</p>`;
+    newString+= `<p class="card-title flex-fill font-weight-light">${messagesArray[i].time}</p>`;
+    newString+= `<button type="button" class="btn btn-primary btn-sm" id="editButton">Edit</button>`
+    newString+= `<button type="button" class="btn btn-secondary btn-sm" id="deleteButton">Delete</button>`
+    // newString+= `</div>`;
     newString+= `</div>`;
-    //newString+= `</div>`;
 
 
 }
