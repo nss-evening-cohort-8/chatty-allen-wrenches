@@ -8,6 +8,7 @@ function messageSubmit() {
         document.getElementById('input').value = '';
     })
 }
+
 const messageSubmitClick = () => {
     document.getElementById('sendButton').addEventListener('click', function() {
         event.preventDefault();
@@ -22,8 +23,39 @@ const makeDark = () => {
         document.body.style.background = "rgb(36, 34, 34)";
         document.getElementById('bigDiv').style.background = "rgb(36, 34, 34)";
         document.getElementById('messages').style.color = "white";
-    })
-}
+    }
+)}
+// const makeBubbleGum = () => {
+//     document.getElementById('modalSave').addEventListener("click", (e) => {
+//         console.log(e.target);
+//         // if () {
+//         //     document.body.style.background = "rgb(36, 34, 34)";
+//         //     document.getElementById('bigDiv').style.background = "rgb(36, 34, 34)";
+//         //     document.getElementById('messages').style.color = "white";
+//         // }
+//     }
+// )}
+
+// makeBubbleGum();
+
+// const optionArray = document.getElementById('themeOptions').children;
+// console.log(optionArray[1].value);
+
+// optionArray.forEach((option) => {
+//     if (optionArray[i].value == ) {
+
+//     }
+// })
+
+// const switchThemeOption = () => {
+//     document.getElementById('modalSave').addEventListener("click", () => {
+//         if () {
+//             document.body.style.background = "#e71e82";
+//             document.getElementById('bigDiv').style.background = "#e483b4";
+//             document.getElementById('messages').style.color = "white";
+//         }
+//     }
+// )}
 
 const makeTextLarge = () => {
     document.getElementById('largeText').addEventListener("click", () => {

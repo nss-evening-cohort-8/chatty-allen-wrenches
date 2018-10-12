@@ -10,6 +10,7 @@ let timeStamp = '';
 let idCounter = 5;
 let editing = 'no';
 let newMsg;
+let themeOption = '';
 
 function setIdCounter() {
     idCounter++;
@@ -25,6 +26,10 @@ function setUserName() {
 
 function getUserName() {
     return userName;
+}
+
+function getThemeOption() {
+    return themeOption;
 }
 
 function setMessageString(newValue) {
