@@ -17,9 +17,9 @@ const messageSubmit = () => {
             outputString += "  ";
         };
 
-    
     })
 }
+
 
 const editEvent = () => {
     let editors = document.getElementsByClassName('editButton');
