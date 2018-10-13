@@ -6,4 +6,17 @@ footer {
 #clearMessages, #customTheme, 
 #largeText {
     border: solid white 1px;
-};
+} 
+
+.darkTheme {
+    background: #242222;
+ }
+
+.darkThemeBubble {
+    color: white;
+}
+
+.largeText {
+    font-size: 35px;
+}
+

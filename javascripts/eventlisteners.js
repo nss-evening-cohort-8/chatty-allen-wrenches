@@ -19,10 +19,10 @@ const messageSubmitClick = () => {
 }
 
 const makeDark = () => {
-    document.getElementById('darkTheme').addEventListener("click", () => {
-        document.body.style.background = "rgb(36, 34, 34)";
-        document.getElementById('messages').style.background = "rgb(36, 34, 34)";
-        document.getElementById('messages').style.color = "white";
+    const darkThemeButton = document.getElementById('darkTheme');
+    darkThemeButton.addEventListener("click", () => {
+    document.body.classList.toggle("darkTheme");
+    document.getElementById("messages").classList.toggle("darkThemeBubble");
     }
 )}
 const makeBubbleGum = () => {
@@ -83,7 +83,7 @@ const makeRoyal = () => {
 
 const makeTextLarge = () => {
     document.getElementById('largeText').addEventListener("click", () => {
-        document.getElementById('messages').style.fontSize = "150%";
+        document.getElementById('messages').classList.toggle("largeText");
     })
 }
 
