@@ -28,15 +28,7 @@ const getUserName = () => {
     return userName;
 }
 
-<<<<<<< HEAD
-function getThemeOption() {
-    return themeOption;
-}
-
-function setMessageString(newValue) {
-=======
 const setMessageString = (newValue) => {
->>>>>>> master
     messageString = newValue;
 }
 
