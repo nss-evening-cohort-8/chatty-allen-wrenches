@@ -3,12 +3,14 @@ import{printToDom, printToDomEdit} from '../helpers/util.js';
 import { editEvent, deleteEvent } from '../eventlisteners.js';
 
 let messagesArray=[];
+let badWordsArray=[];
 
 let userName = '';
 let messageString = '';
 let timeStamp = '';
 let idCounter = 5;
 let editing = 'no';
+let available=true;
 let newMsg;
 let themeOption = '';
 
@@ -48,6 +50,22 @@ const setMessages = (newArray) => {
     messagesArray=newArray;
 };
 
+const setBadWords = (newArray) => {
+    badWordsArray=newArray;
+};
+
+const getBadWordsz = () => {
+    return badWordsArray;
+}
+
+const setAvailable= (avail) => {
+available=avail;
+}
+
+const getAvailable = () => {
+    return available;
+}
+
 const getMessagesz = () => {
     return messagesArray;
 }
@@ -74,14 +92,35 @@ const messagesBuilder = (messagesArray) => {
     deleteEvent();
 }
 
+let badWordInput = () => {
+    let badInputSplit = document.getElementById('input').value.split(' ');
+    setAvailable(true)
+    for(let i=0; i<badInputSplit.length;i++){
+        
+        for(let j=0;j<badWordsArray.length;j++){
+        if(badInputSplit[i]==badWordsArray[j].badWord){
+            setAvailable(false)
+            alert(`${badWordsArray[j].badWord} is a bad word!`)
+            break;
+        }
+    }
+    }; 
+};
+
 const newMessage = () => {
+    const newMessage = getAvailable();
     setUserName();
     setMessageString(document.getElementById('input').value);
     setTimeStamp(moment().format('LT'));
     setIdCounter();
-    newMsg = {id: getIdCounter(), name: getUserName(), message: getMessageString(), time: getTimeStamp()};
-    pushNewMessage();
+    setAvailable();
+    newMsg = {id: getIdCounter(), name: getUserName(), message: getMessageString(), time: getTimeStamp(), available: getAvailable()};
+    if(newMessage){
+        pushNewMessage();
+    } 
 }
+
+
 
 const pushNewMessage = () => {
     let tempMsg = getMessagesz();
@@ -133,4 +172,7 @@ const deleteMessage = () => {
     messagesBuilder(getMessagesz());
 }
 
-export {getMessagesz, setMessages, messagesBuilder, saveEditMessage, beginEditMessage, deleteMessage};
+
+
+
+export {getMessagesz, setMessages, messagesBuilder, saveEditMessage, beginEditMessage, deleteMessage, setBadWords, getBadWordsz,badWordInput};

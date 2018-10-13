@@ -1,10 +1,13 @@
-import {saveEditMessage, messagesBuilder, getMessagesz, setMessages, beginEditMessage, deleteMessage} from './components/chatcomponent.js';
+import {saveEditMessage, messagesBuilder, getMessagesz, setMessages, beginEditMessage, deleteMessage,badWordInput} from './components/chatcomponent.js';
+
 
 const messageSubmit = () => {
     document.getElementById('inputForm').addEventListener('submit', function() {
+        badWordInput();
         event.preventDefault();
         saveEditMessage();
         messagesBuilder(getMessagesz());
+        
         document.getElementById('input').value = '';
     })
 }
