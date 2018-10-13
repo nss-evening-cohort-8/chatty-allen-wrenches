@@ -132,4 +132,23 @@ const deleteMessage = () => {
     messagesBuilder(getMessagesz());
 }
 
+const emojisArray = {
+    "happyFace": "😊", 
+    "sadFace":"😔", 
+    "taco":"🌮", 
+    "thumpsUp":"👍🏽", 
+    "thumpsDown":"👎🏽", 
+};
+
+// let emojisArray = '';
+// const translatorLoop = (emojisArray) => {
+// outputString = '';
+// let inputText = document.getElementById('dropdownemojibtn').value.();
+
+
+
+// let emojisArray = document.getElementById('dropdownemojibtn');
+// emojisArray.addEventListener('click');
+
+
 export {getMessagesz, setMessages, messagesBuilder, saveEditMessage, beginEditMessage, deleteMessage};

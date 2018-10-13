@@ -8,17 +8,13 @@
     <title>The Chatroom</title>
 </head>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Chat With SamIAm</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <img id="chatLogo" src="https://cdn-images-1.medium.com/max/1279/1*0IpquI0xSAap0jeUItwaVg.png" width="300" height="250" alt="logo">
-  
-
-
-
-
+<div class="container">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
+    <br>
+    <a class="navbar-brand" ></a href="#">ChatterBox</a>
+    <img id="chatLogo" src="javascripts/images/chatty logo.png" width="280" height="150"/>
+  </nav>
+</div>
 
 
 <body class="bg-light">
@@ -44,6 +40,22 @@
         <button class="btn btn-rounded btn-secondary" id="largeText">Large Text</button>
         <button class="btn btn-rounded btn-primary" id="customTheme">Customize Theme</button>
         <button class="btn btn-rounded btn-danger" id="clearMessages">Clear Message Board</button>
+        
+        
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownemojibtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Emojis
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Happy </a>
+              <a class="dropdown-item" href="#">Sad</a>
+              <a class="dropdown-item" href="#">Taco</a>
+              <a class="dropdown-item" href="#">Thumps Up</a>
+              <a class="dropdown-item" href="#">Thumps Down</a>
+            </div>
+          </div>
+     
+
     </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

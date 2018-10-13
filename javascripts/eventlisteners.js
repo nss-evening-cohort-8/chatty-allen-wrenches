@@ -6,6 +6,18 @@ const messageSubmit = () => {
         saveEditMessage();
         messagesBuilder(getMessagesz());
         document.getElementById('input').value = '';
+
+        let outputString = '';
+        const translatorLoop = (emojisArray) => {
+        outputString = '';
+        let inputText = document.getElementById('inputForm').value;
+        let inputArray = inputText.split('');
+        for (i = 0; i < inputArray.length; i++) {
+            outputString += `${ emojisArray[inputArray[i]]}`;
+            outputString += "  ";
+        };
+
+    
     })
 }
 
