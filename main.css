@@ -24,3 +24,16 @@ form {
     height: 500px;
     overflow: scroll;
 }
+
+.messageText {
+    width: 45%;
+    margin-right: 5%;
+}
+
+.nameText {
+    width: 5%;
+}
+
+.btn {
+    max-height: 40px;
+}
