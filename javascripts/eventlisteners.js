@@ -1,14 +1,13 @@
 import {saveEditMessage, messagesBuilder, getMessagesz, beginEditMessage, deleteMessage} from './components/chatcomponent.js';
 
 const messageSubmit = () => {
-    document.getElementById('inputForm').addEventListener('submit', function() {
+    document.getElementById('inputForm').addEventListener('submit', function(){
         event.preventDefault();
         saveEditMessage();
         messagesBuilder(getMessagesz());
         document.getElementById('input').value = '';
-
         let outputString = '';
-        const translatorLoop = (emojisArray) => {
+        const emojisArray = (emojisArray) => {
         outputString = '';
         let inputText = document.getElementById('inputForm').value;
         let inputArray = inputText.split('');
@@ -16,10 +15,9 @@ const messageSubmit = () => {
             outputString += `${ emojisArray[inputArray[i]]}`;
             outputString += "  ";
         };
-
-    })
+    }
+    });
 }
-
 
 const editEvent = () => {
     let editors = document.getElementsByClassName('editButton');
