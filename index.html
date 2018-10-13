@@ -7,11 +7,26 @@
     <link rel="stylesheet" href="main.css">
     <title>The Chatroom</title>
 </head>
+
+<div class="container">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
+    <br>
+    <a class="navbar-brand" ></a href="#"></a>
+    <img id="chatLogo" src="javascripts/images/Chatterbox white background.png" width="280" height="150"/>
+  </nav>
+</div>
+
+
+<body class="bg-light">
+    <div id="bigDiv" class="col-8 offset-md-2 border border-dark d-flex justify-content-around bg-light">
+        <div id="messages"></div>
+
 <body>
     <div id="bigDiv" class="col-8 offset-md-2 d-flex justify-content-around">
         <div id='chatBox'>
             <div id="messages"></div>
         </div>
+
     </div>
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
@@ -66,6 +81,23 @@
         <!-- <button class="btn btn-rounded btn-primary" data-toggle="modal" data-target="modalTarget" id="customTheme">Customize Theme</button> -->
        
         <button class="btn btn-rounded btn-danger" id="clearMessages">Clear Message Board</button>
+        
+   
+
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownemojibtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Emojis
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Happy </a>
+              <a class="dropdown-item" href="#">Sad</a>
+              <a class="dropdown-item" href="#">Taco</a>
+              <a class="dropdown-item" href="#">Thumps Up</a>
+              <a class="dropdown-item" href="#">Thumps Down</a>
+            </div>
+          </div>
+     
+
     </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

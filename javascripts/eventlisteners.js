@@ -2,14 +2,24 @@ import {saveEditMessage, messagesBuilder, getMessagesz, setMessages, beginEditMe
 
 
 const messageSubmit = () => {
+
     document.getElementById('inputForm').addEventListener('submit', function() {
         badWordInput();
         event.preventDefault();
         saveEditMessage();
         messagesBuilder(getMessagesz());
-        
         document.getElementById('input').value = '';
-    })
+        let outputString = '';
+        const emojisArray = (emojisArray) => {
+        outputString = '';
+        let inputText = document.getElementById('inputForm').value;
+        let inputArray = inputText.split('');
+        for (i = 0; i < inputArray.length; i++) {
+            outputString += `${ emojisArray[inputArray[i]]}`;
+            outputString += "  ";
+        };
+    }
+    });
 }
 
 const messageSubmitClick = () => {
