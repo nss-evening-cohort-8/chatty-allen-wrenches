@@ -2,8 +2,13 @@
     "bots": [
         {
             "name": "doggoBot",
-            "hear": ["How are you?", "What's your favorite food?"],
-            "response": ["Woof woof!", "Woof woof?  Woof woof woof!"]
+            "hear": ["How are you?", "What's your favorite food?", "Who's a good bot?"],
+            "response": ["Woof woof!", "Woof woof?  Woof woof woof!", "WOOF WOOF WOOF!!"]
+        },
+        {
+            "name": "broBot",
+            "hear": ["Woof woof!", "What's your favorite food?", "What's up man?"],
+            "response": ["Hey dog, be a brah and fetch me a brewski.", "Burgers and beerskies breh!", "Just throwin some beers back with the bros before the game bro"]
         }
     ]
 }
