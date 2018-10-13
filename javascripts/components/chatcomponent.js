@@ -10,6 +10,7 @@ let timeStamp = '';
 let idCounter = 5;
 let editing = 'no';
 let newMsg;
+let themeOption = '';
 
 const setIdCounter = () => {
     idCounter++;
@@ -55,7 +56,7 @@ const messagesBuilder = (messagesArray) => {
     let newString = '';
     for(let i=0; i<messagesArray.length;i++){
     //newString+= `<div class="border border-primary">`;
-    newString += `<div class="col-12 d-flex justify-content-center border border-bottom-0 messageDiv bg-light" id="${messagesArray[i].id}">`
+    newString += `<div class="col-12 d-flex justify-content-center border border-bottom-1 rounded messageDiv" id="${messagesArray[i].id}">`
     // newString+= `<div class="d-flex justify-content-around">`;
     newString+= `<p class="nameClass flex-fill font-weight-bold nameText">${messagesArray[i].name}:</p>`;
     newString+= `<p class="card-title flex-fill messageText" id="messageId${[i]}">${messagesArray[i].message}</p>`;
