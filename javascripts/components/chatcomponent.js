@@ -82,6 +82,19 @@ const newMessage = () => {
     pushNewMessage();
 }
 
+let badWordInput = () => {
+    // let newString='';
+    let badInputSplit = document.getElementById('input').value.split(' ');
+    for(let i=0; i<badInputSplit.length;i++){
+    //    newString += swedish[splitEng[i]] + ' '; 
+        if(badInputSplit[i]==='crap'){
+            alert('That is a bad word!')
+        } else if (badInputSplit[i]==='pie'){
+            alert('Pies are yummy!')
+        };
+    }; 
+};
+
 const pushNewMessage = () => {
     let tempMsg = getMessagesz();
     tempMsg.push(newMsg);
@@ -132,4 +145,7 @@ const deleteMessage = () => {
     messagesBuilder(getMessagesz());
 }
 
-export {getMessagesz, setMessages, messagesBuilder, saveEditMessage, beginEditMessage, deleteMessage};
+
+
+
+export {getMessagesz, setMessages, messagesBuilder, saveEditMessage, beginEditMessage, deleteMessage, badWordInput};
