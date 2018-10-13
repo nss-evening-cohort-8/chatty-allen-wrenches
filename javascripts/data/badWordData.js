@@ -18,4 +18,4 @@ const getBadWords = () => {
     myRequest.send();
 };
 
-export{getMessages, getBadWords};
+export{getBadWords};
