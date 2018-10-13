@@ -1,12 +1,13 @@
 import {getBotArray} from './components/chatbot.js';
-import {saveEditMessage, messagesBuilder, getMessagesz, setMessages, beginEditMessage, deleteMessage} from './components/chatcomponent.js';
-
+import {saveEditMessage, messagesBuilder, getMessagesz, setMessages, beginEditMessage, deleteMessage, badWordInput} from './components/chatcomponent.js';
 
 const messageSubmit = () => {
     document.getElementById('inputForm').addEventListener('submit', function() {
+        badWordInput();
         event.preventDefault();
         saveEditMessage();
         messagesBuilder(getMessagesz());
+        
         document.getElementById('input').value = '';
     })
 }
@@ -106,7 +107,6 @@ const australiaMode = () => {
             });
     })
 }
-
 const clearMessages = () => {
     const clearMessagesButton = document.getElementById('clearMessages');
     clearMessagesButton.addEventListener("click", (e) => {
@@ -134,7 +134,6 @@ const deleteEvent = () => {
         })
     }
 }
-
 const botObserver = () => {
     const observerCallBack = function(mutationsList) {
         for(const mutation of mutationsList) {
