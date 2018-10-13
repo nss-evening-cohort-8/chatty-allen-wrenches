@@ -31,7 +31,7 @@ form {
 #chatBox {
     border: solid black 1px;
     width: 100%;
-    height: 500px;
+    height: 375px;
     overflow: scroll;
 }
 
@@ -43,8 +43,6 @@ form {
 .nameText {
     width: 5%;
 }
-
-
 
 .btn {
     max-height: 40px;

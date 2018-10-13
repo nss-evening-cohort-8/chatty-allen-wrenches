@@ -179,12 +179,8 @@ const emojisArray = {
     "thumpsDown":"👎🏽", 
 };
 
-let emojisArray = document.getElementById('dropdownemojibtn');
-emojisArray.addEventListener('click');
-
-
-export {getMessagesz, setMessages, messagesBuilder, saveEditMessage, beginEditMessage, deleteMessage};
-
+let emojiSelected = document.getElementById('dropdownemojibtn');
+// emojiSelected.addEventListener('click');
 
 export {getMessagesz, setMessages, messagesBuilder, saveEditMessage, beginEditMessage, deleteMessage, setBadWords, getBadWordsz,badWordInput};
 
