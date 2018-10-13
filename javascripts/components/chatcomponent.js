@@ -1,4 +1,3 @@
-
 import{printToDom, printToDomEdit} from '../helpers/util.js';
 import { editEvent, deleteEvent } from '../eventlisteners.js';
 
@@ -125,10 +124,8 @@ const newMessage = (source) => {
     setIdCounter();
     setAvailable();
     newMsg = {id: getIdCounter(), name: getUserName(), message: getMessageString(), time: getTimeStamp(), available: getAvailable()};
-    console.log(newMsg);
     if(availability){
         pushNewMessage();
-        console.log(messagesArray);
     } 
 }
 
