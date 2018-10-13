@@ -8,23 +8,27 @@
     <title>The Chatroom</title>
 </head>
 <body class="bg-light">
-    <div id="bigDiv" class="col-8 offset-md-2 border border-dark d-flex justify-content-around bg-light">
-        <div id="messages"></div>
+    <div id="bigDiv" class="col-8 offset-md-2 d-flex justify-content-around bg-light">
+        <div id='chatBox'>
+            <div id="messages"></div>
+        </div>
     </div>
     <footer class="fixed-bottom container-fluid text-center">
-        <div class="form-row justify-content-center mb-3">
-            <select class="custom-select-primary col-1" id='inputUserNames'>
-                <option selected>User</option>
-                <option value="Aftan">Aftan</option>
-                <option value="Austin">Austin</option>
-                <option value="Rich">Rich</option>
-                <option value="Rob">Rob</option>
-                <option value="Zoe">Zoe</option>
-            </select>
-            <form id='inputForm'>
-                <input class="form-control col-7" id='input' type="text" placeholder="Type here...">
-            </form>
-            <button class="btn btn-rounded btn-info mr-1 ml-1"id="sendButton">Send</button> 
+        <div class="container justify-content-center mb-3">
+            <div class='row'>
+                <select class="custom-select-primary col-1" id='inputUserNames'>
+                    <option selected>User</option>
+                    <option value="Aftan">Aftan</option>
+                    <option value="Austin">Austin</option>
+                    <option value="Rich">Rich</option>
+                    <option value="Rob">Rob</option>
+                    <option value="Zoe">Zoe</option>
+                </select>
+                <form id='inputForm' class='col-10'>
+                    <input class="form-control form-control-lg col" id='input' type="text" placeholder="Type here...">
+                </form>
+                <button class="btn btn-rounded btn-info mr-1 ml-1"id="sendButton">Send</button> 
+            </div>
         </div>
         <button class="btn btn-rounded btn-dark" id="darkTheme">Dark Theme</button>
         <button class="btn btn-rounded btn-secondary" id="largeText">Large Text</button>
