@@ -1,7 +1,7 @@
 import{getMessages} from './data/messageData.js'
 import {messageSubmit, messageSubmitClick, clearMessages, makeDark, makeTextLarge, makeBubbleGum, makeFrost, makeFire, makeGreen, makeRoyal} from '../javascripts/eventlisteners.js';
 
-function initializeApp() {
+const initializeApp = () => {
     getMessages();
     messageSubmit();
     messageSubmitClick();

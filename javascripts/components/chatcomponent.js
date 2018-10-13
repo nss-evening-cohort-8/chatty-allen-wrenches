@@ -12,39 +12,43 @@ let editing = 'no';
 let newMsg;
 let themeOption = '';
 
-function setIdCounter() {
+const setIdCounter = () => {
     idCounter++;
 }
 
-function getIdCounter() {
+const getIdCounter = () => {
     return idCounter;
 }
 
-function setUserName() {
+const setUserName = () => {
     userName = document.getElementById('inputUserNames')[document.getElementById('inputUserNames').selectedIndex].value;
 }
 
-function getUserName() {
+const getUserName = () => {
     return userName;
 }
 
+<<<<<<< HEAD
 function getThemeOption() {
     return themeOption;
 }
 
 function setMessageString(newValue) {
+=======
+const setMessageString = (newValue) => {
+>>>>>>> master
     messageString = newValue;
 }
 
-function getMessageString() {
+const getMessageString = () => {
     return messageString;
 }
 
-function setTimeStamp(newValue) {
+const setTimeStamp = (newValue) => {
     timeStamp = newValue;
 }
 
-function getTimeStamp() {
+const getTimeStamp = () => {
     return timeStamp;
 }
 
@@ -78,16 +82,16 @@ const messagesBuilder = (messagesArray) => {
     deleteEvent();
 }
 
-function newMessage() {
+const newMessage = () => {
     setUserName();
     setMessageString(document.getElementById('input').value);
-    setTimeStamp(event.timeStamp);
+    setTimeStamp(moment().format('LT'));
     setIdCounter();
     newMsg = {id: getIdCounter(), name: getUserName(), message: getMessageString(), time: getTimeStamp()};
     pushNewMessage();
 }
 
-function pushNewMessage() {
+const pushNewMessage = () => {
     let tempMsg = getMessagesz();
     tempMsg.push(newMsg);
     if(tempMsg.length > 20) {
@@ -96,7 +100,7 @@ function pushNewMessage() {
     setMessages(tempMsg);
 }
 
-function beginEditMessage() {
+const beginEditMessage = () => {
     let editMe = event.target.closest('.messageDiv').id;
     for(let i = 0; i < messagesArray.length; i++) {
         if(messagesArray[i].id == editMe) {
@@ -108,12 +112,12 @@ function beginEditMessage() {
     }
 }
 
-function saveEditMessage() {
+const saveEditMessage = () => {
     if(editing !== 'no') {
         for(let i = 0; i < messagesArray.length; i++) {
             if(messagesArray[i].id == editing) {
                 messagesArray[i].message = document.getElementById('input').value;
-                messagesArray[i].time = event.timeStamp;
+                messagesArray[i].time = moment().format('LT');
                 editing = 'no';
                 break;
             }
@@ -124,7 +128,7 @@ function saveEditMessage() {
     }
 }
 
-function deleteMessage() {
+const deleteMessage = () => {
     let deleteMe = event.target.closest('.messageDiv').id;
     console.log('deleteMe', deleteMe);
     for(let i = 0; i < messagesArray.length; i++) {

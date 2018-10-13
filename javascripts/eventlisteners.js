@@ -1,6 +1,6 @@
 import {saveEditMessage, messagesBuilder, getMessagesz, setMessages, beginEditMessage, deleteMessage} from './components/chatcomponent.js';
 
-function messageSubmit() {
+const messageSubmit = () => {
     document.getElementById('inputForm').addEventListener('submit', function() {
         event.preventDefault();
         saveEditMessage();
@@ -97,7 +97,7 @@ const clearMessages = () => {
     })
 }
 
-function editEvent() {
+const editEvent = () => {
     let editors = document.getElementsByClassName('editButton');
     for(let i=0; i < editors.length; i++) {
         editors[i].addEventListener('click', function() {
@@ -106,7 +106,7 @@ function editEvent() {
     }
 }
 
-function deleteEvent() {
+const deleteEvent = () => {
     let deleters = document.getElementsByClassName('deleteButton');
     for(let i = 0; i < deleters.length; i++) {
         deleters[i].addEventListener('click', function() {
