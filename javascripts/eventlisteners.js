@@ -90,6 +90,18 @@ const makeTextLarge = () => {
     })
 }
 
+const australiaMode = () => {
+    document.getElementById('ausMode').addEventListener("click", (e) => {
+        document.body.style.background = "#00843D";
+            document.getElementById('messages').style.background = "#FFCD00";
+            document.getElementById('chatBox').style.background = "#FFCD00";
+            document.getElementById('messages').style.color = "white";
+            ['', '-ms-', '-webkit-', '-o-', '-moz-'].map(function(prefix){
+                document.body.style[prefix + 'transform'] = 'rotate(180deg)';
+            });
+    })
+}
+
 const clearMessages = () => {
     const clearMessagesButton = document.getElementById('clearMessages');
     clearMessagesButton.addEventListener("click", (e) => {
@@ -138,8 +150,6 @@ const botObserver = () => {
     };
     const observer = new MutationObserver(observerCallBack);
     observer.observe(document.getElementById('messages'), {childList: true});
-    
-       
 }
 
-export {messageSubmit, messageSubmitClick, clearMessages, makeDark, makeTextLarge, editEvent, deleteEvent, makeBubbleGum, makeFrost, makeFire, makeGreen, makeRoyal, botObserver};
+export {messageSubmit, messageSubmitClick, clearMessages, makeDark, makeTextLarge, editEvent, deleteEvent, makeBubbleGum, makeFrost, makeFire, makeGreen, makeRoyal, botObserver,  australiaMode};
