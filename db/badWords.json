@@ -1,0 +1,18 @@
+{
+    "badWordsArray": [
+        {
+            "badWord": "crap"
+        },
+        {
+            "badWord": "pie"
+        },
+        {
+            "badWord": "cake"
+        },
+        {
+            "badWord": "muffin"
+        },
+        {
+            "badWord": "austin"        }
+    ]
+}

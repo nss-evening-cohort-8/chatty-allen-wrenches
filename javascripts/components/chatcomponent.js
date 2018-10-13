@@ -3,6 +3,7 @@ import{printToDom, printToDomEdit} from '../helpers/util.js';
 import { editEvent, deleteEvent } from '../eventlisteners.js';
 
 let messagesArray=[];
+let badWordsArray=[];
 
 let userName = '';
 let messageString = '';
@@ -47,6 +48,14 @@ const setMessages = (newArray) => {
     messagesArray=newArray;
 };
 
+const setBadWords = (newArray) => {
+    badWordsArray=newArray;
+};
+
+const getBadWordsz = () => {
+    return badWordsArray;
+}
+
 const getMessagesz = () => {
     return messagesArray;
 }
@@ -83,15 +92,11 @@ const newMessage = () => {
 }
 
 let badWordInput = () => {
-    // let newString='';
     let badInputSplit = document.getElementById('input').value.split(' ');
     for(let i=0; i<badInputSplit.length;i++){
-    //    newString += swedish[splitEng[i]] + ' '; 
-        if(badInputSplit[i]==='crap'){
+        if(badInputSplit[i]===badWordsArray[i]){
             alert('That is a bad word!')
-        } else if (badInputSplit[i]==='pie'){
-            alert('Pies are yummy!')
-        };
+        }
     }; 
 };
 
@@ -148,4 +153,4 @@ const deleteMessage = () => {
 
 
 
-export {getMessagesz, setMessages, messagesBuilder, saveEditMessage, beginEditMessage, deleteMessage, badWordInput};
+export {getMessagesz, setMessages, messagesBuilder, saveEditMessage, beginEditMessage, deleteMessage, badWordInput, setBadWords, getBadWordsz};
