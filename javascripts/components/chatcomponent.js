@@ -102,11 +102,6 @@ const messagesBuilder = (messageArray) => {
     deleteEvent();
 }
 
-<<<<<<< HEAD
-const newMessage = (source) => {
-    setUserName(source);
-    setMessageString(source);
-=======
 let badWordInput = () => {
     let badInputSplit = document.getElementById('input').value.split(' ');
     setAvailable(true)
@@ -122,17 +117,18 @@ let badWordInput = () => {
     }; 
 };
 
-const newMessage = () => {
-    const newMessage = getAvailable();
-    setUserName();
-    setMessageString(document.getElementById('input').value);
->>>>>>> master
+const newMessage = (source) => {
+    const availability = getAvailable();
+    setUserName(source);
+    setMessageString(source);
     setTimeStamp(moment().format('LT'));
     setIdCounter();
     setAvailable();
     newMsg = {id: getIdCounter(), name: getUserName(), message: getMessageString(), time: getTimeStamp(), available: getAvailable()};
-    if(newMessage){
+    console.log(newMsg);
+    if(availability){
         pushNewMessage();
+        console.log(messagesArray);
     } 
 }
 
@@ -186,11 +182,4 @@ const deleteMessage = () => {
     messagesBuilder(getMessagesz());
 }
 
-<<<<<<< HEAD
-export {getMessagesz, setMessages, messagesBuilder, saveEditMessage, beginEditMessage, deleteMessage, newMessage};
-=======
-
-
-
-export {getMessagesz, setMessages, messagesBuilder, saveEditMessage, beginEditMessage, deleteMessage, setBadWords, getBadWordsz,badWordInput};
->>>>>>> master
+export {getMessagesz, setMessages, messagesBuilder, saveEditMessage, beginEditMessage, deleteMessage, setBadWords, getBadWordsz, badWordInput, newMessage};

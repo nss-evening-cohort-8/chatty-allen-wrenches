@@ -1,4 +1,5 @@
-import {messagesBuilder, newMessage, getMessagesz} from './chatcomponent.js';
+import {messagesBuilder, newMessage, getMessagesz, badWordInput} from './chatcomponent.js';
+
 
 let botArray = [];
 
@@ -39,6 +40,7 @@ class bot {
     }
 
     say() {
+        badWordInput();
         newMessage(this);
         this.responding = 'no';
         setTimeout(delayedBuilder, random()*1000);

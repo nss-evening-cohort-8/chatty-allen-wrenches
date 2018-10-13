@@ -7,7 +7,6 @@ const messageSubmit = () => {
         event.preventDefault();
         saveEditMessage();
         messagesBuilder(getMessagesz());
-        
         document.getElementById('input').value = '';
     })
 }
