@@ -67,9 +67,9 @@ const messagesBuilder = (messageArray) => {
     //newString+= `<div class="border border-primary">`;
     newString += `<div class="col-12 d-flex justify-content-center border border-bottom-0 messageDiv bg-light" id="${messageArray[i].id}">`
     // newString+= `<div class="d-flex justify-content-around">`;
-    newString+= `<p class="nameClass flex-fill font-weight-bold">${messageArray[i].name}:</p>`;
-    newString+= `<p class="card-title flex-fill" id="messageId${[i]}">${messageArray[i].message}</p>`;
-    newString+= `<p class="card-title flex-fill font-weight-light">${messageArray[i].time}</p>`;
+    newString+= `<p class="nameClass flex-fill font-weight-bold nameText">${messagesArray[i].name}:</p>`;
+    newString+= `<p class="card-title flex-fill messageText" id="messageId${[i]}">${messagesArray[i].message}</p>`;
+    newString+= `<p class="card-title flex-fill font-weight-light">${messagesArray[i].time}</p>`;
     newString+= `<button type="button" class="btn btn-primary btn-sm editButton" id="editButton">Edit</button>`
     newString+= `<button type="button" class="btn btn-secondary btn-sm deleteButton" id="deleteButton">Delete</button>`
     // newString+= `</div>`;
