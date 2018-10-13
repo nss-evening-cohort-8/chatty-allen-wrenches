@@ -23,6 +23,7 @@ const makeDark = () => {
     darkThemeButton.addEventListener("click", () => {
     document.body.classList.toggle("darkTheme");
     document.getElementById("messages").classList.toggle("darkThemeBubble");
+    document.getElementById("bigDiv").classList.toggle("darkThemeBubble");
     }
 )}
 const makeBubbleGum = () => {
