@@ -1,5 +1,3 @@
-
-
 footer {
     margin-bottom: 50px;
 }
@@ -8,7 +6,19 @@ footer {
 #clearMessages, #customTheme, 
 #largeText {
     border: solid white 1px;
-};
+} 
+
+.darkTheme {
+    background: #242222;
+ }
+
+.darkThemeBubble {
+    color: white;
+}
+
+.largeText {
+    font-size: 35px;
+}
 
 #sendButton {
     height: 30px;
