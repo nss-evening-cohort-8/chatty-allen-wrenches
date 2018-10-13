@@ -41,7 +41,7 @@ class bot {
     say() {
         newMessage(this);
         this.responding = 'no';
-        setInterval(delayedBuilder, random()*1000);
+        setTimeout(delayedBuilder, random()*1000);
     }
 
 }
