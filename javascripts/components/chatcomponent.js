@@ -66,11 +66,7 @@ const messagesBuilder = (messageArray) => {
     let newString = '';
     for(let i=0; i<messageArray.length;i++){
     //newString+= `<div class="border border-primary">`;
-<<<<<<< HEAD
-    newString += `<div class="col-12 d-flex justify-content-center border border-bottom-0 messageDiv bg-light" id="${messageArray[i].id}">`
-=======
     newString += `<div class="col-12 d-flex justify-content-center border border-bottom-1 rounded messageDiv" id="${messagesArray[i].id}">`
->>>>>>> master
     // newString+= `<div class="d-flex justify-content-around">`;
     newString+= `<p class="nameClass flex-fill font-weight-bold nameText">${messagesArray[i].name}:</p>`;
     newString+= `<p class="card-title flex-fill messageText" id="messageId${[i]}">${messagesArray[i].message}</p>`;
