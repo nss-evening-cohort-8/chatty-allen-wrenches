@@ -1,0 +1,9 @@
+{
+    "bots": [
+        {
+            "name": "doggoBot",
+            "hear": ["How are you?", "What's your favorite food?"],
+            "response": ["Woof woof!", "Woof woof?  Woof woof woof!"]
+        }
+    ]
+}
