@@ -21,41 +21,65 @@ const messageSubmitClick = () => {
 const makeDark = () => {
     document.getElementById('darkTheme').addEventListener("click", () => {
         document.body.style.background = "rgb(36, 34, 34)";
-        document.getElementById('bigDiv').style.background = "rgb(36, 34, 34)";
+        document.getElementById('messages').style.background = "rgb(36, 34, 34)";
         document.getElementById('messages').style.color = "white";
     }
 )}
-// const makeBubbleGum = () => {
-//     document.getElementById('modalSave').addEventListener("click", (e) => {
-//         console.log(e.target);
-//         // if () {
-//         //     document.body.style.background = "rgb(36, 34, 34)";
-//         //     document.getElementById('bigDiv').style.background = "rgb(36, 34, 34)";
-//         //     document.getElementById('messages').style.color = "white";
-//         // }
-//     }
-// )}
+const makeBubbleGum = () => {
+    document.getElementById('modalSave').addEventListener("click", (e) => {
+        const optionArray = document.getElementById('themeOptions').children;
+        if (optionArray[1].selected) {
+            document.body.style.background = "#f02fb6";
+            document.getElementById('messages').style.background = "#e773c4";
+            document.getElementById('messages').style.color = "white";
 
-// makeBubbleGum();
+        }
+    }
+)}
+const makeFrost = () => {
+    document.getElementById('modalSave').addEventListener("click", (e) => {
+        const optionArray = document.getElementById('themeOptions').children;
+        if (optionArray[2].selected) {
+            document.body.style.background = "#0955c7";
+            document.getElementById('messages').style.background = "#6be1ff";
+            document.getElementById('messages').style.color = "white";
 
-// const optionArray = document.getElementById('themeOptions').children;
-// console.log(optionArray[1].value);
+        }
+    }
+)}
+const makeFire = () => {
+    document.getElementById('modalSave').addEventListener("click", (e) => {
+        const optionArray = document.getElementById('themeOptions').children;
+        if (optionArray[3].selected) {
+            document.body.style.background = "#ca0303";
+            document.getElementById('messages').style.background = "#fd3f32";
+            document.getElementById('messages').style.color = "white";
 
-// optionArray.forEach((option) => {
-//     if (optionArray[i].value == ) {
+        }
+    }
+)}
+const makeGreen = () => {
+    document.getElementById('modalSave').addEventListener("click", (e) => {
+        const optionArray = document.getElementById('themeOptions').children;
+        if (optionArray[4].selected) {
+            document.body.style.background = "#00a008";
+            document.getElementById('messages').style.background = "#1adb00";
+            document.getElementById('messages').style.color = "white";
 
-//     }
-// })
+        }
+    }
+)}
+const makeRoyal = () => {
+    document.getElementById('modalSave').addEventListener("click", (e) => {
+        const optionArray = document.getElementById('themeOptions').children;
+        if (optionArray[5].selected) {
+            document.body.style.background = "#7b00ce";
+            document.getElementById('messages').style.background = "#9c1ef0";
+            document.getElementById('messages').style.color = "white";
 
-// const switchThemeOption = () => {
-//     document.getElementById('modalSave').addEventListener("click", () => {
-//         if () {
-//             document.body.style.background = "#e71e82";
-//             document.getElementById('bigDiv').style.background = "#e483b4";
-//             document.getElementById('messages').style.color = "white";
-//         }
-//     }
-// )}
+        }
+    }
+)}
 
 const makeTextLarge = () => {
     document.getElementById('largeText').addEventListener("click", () => {
@@ -91,4 +115,4 @@ function deleteEvent() {
     }
 }
 
-export {messageSubmit, messageSubmitClick, clearMessages, makeDark, makeTextLarge, editEvent, deleteEvent};
+export {messageSubmit, messageSubmitClick, clearMessages, makeDark, makeTextLarge, editEvent, deleteEvent, makeBubbleGum, makeFrost, makeFire, makeGreen, makeRoyal};
