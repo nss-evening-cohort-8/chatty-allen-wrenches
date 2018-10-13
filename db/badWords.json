@@ -1,0 +1,23 @@
+{
+    "badWordsArray": [
+        {
+            "badWord": "crap",
+            "available": "true"
+        },
+        {
+            "badWord": "pie",
+            "available": "true"
+        },
+        {
+            "badWord": "cake",
+            "available": "true"
+        },
+        {
+            "badWord": "muffin",
+            "available": "true"
+        },
+        {
+            "badWord": "austin",
+            "available": "true"        }
+    ]
+}

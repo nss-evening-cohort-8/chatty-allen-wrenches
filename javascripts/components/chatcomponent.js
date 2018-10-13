@@ -3,13 +3,16 @@ import{printToDom, printToDomEdit} from '../helpers/util.js';
 import { editEvent, deleteEvent } from '../eventlisteners.js';
 
 let messagesArray=[];
+let badWordsArray=[];
 
 let userName = '';
 let messageString = '';
 let timeStamp = '';
 let idCounter = 5;
 let editing = 'no';
+let available=true;
 let newMsg;
+let themeOption = '';
 
 const setIdCounter = () => {
     idCounter++;
@@ -47,6 +50,22 @@ const setMessages = (newArray) => {
     messagesArray=newArray;
 };
 
+const setBadWords = (newArray) => {
+    badWordsArray=newArray;
+};
+
+const getBadWordsz = () => {
+    return badWordsArray;
+}
+
+const setAvailable= (avail) => {
+available=avail;
+}
+
+const getAvailable = () => {
+    return available;
+}
+
 const getMessagesz = () => {
     return messagesArray;
 }
@@ -55,10 +74,10 @@ const messagesBuilder = (messagesArray) => {
     let newString = '';
     for(let i=0; i<messagesArray.length;i++){
     //newString+= `<div class="border border-primary">`;
-    newString += `<div class="col-12 d-flex justify-content-center border border-bottom-0 messageDiv bg-light" id="${messagesArray[i].id}">`
+    newString += `<div class="col-12 d-flex justify-content-center border border-bottom-1 rounded messageDiv" id="${messagesArray[i].id}">`
     // newString+= `<div class="d-flex justify-content-around">`;
-    newString+= `<p class="nameClass flex-fill font-weight-bold">${messagesArray[i].name}:</p>`;
-    newString+= `<p class="card-title flex-fill" id="messageId${[i]}">${messagesArray[i].message}</p>`;
+    newString+= `<p class="nameClass flex-fill font-weight-bold nameText">${messagesArray[i].name}:</p>`;
+    newString+= `<p class="card-title flex-fill messageText" id="messageId${[i]}">${messagesArray[i].message}</p>`;
     newString+= `<p class="card-title flex-fill font-weight-light">${messagesArray[i].time}</p>`;
     newString+= `<button type="button" class="btn btn-primary btn-sm editButton" id="editButton">Edit</button>`
     newString+= `<button type="button" class="btn btn-secondary btn-sm deleteButton" id="deleteButton">Delete</button>`
@@ -73,14 +92,35 @@ const messagesBuilder = (messagesArray) => {
     deleteEvent();
 }
 
+let badWordInput = () => {
+    let badInputSplit = document.getElementById('input').value.split(' ');
+    setAvailable(true)
+    for(let i=0; i<badInputSplit.length;i++){
+        
+        for(let j=0;j<badWordsArray.length;j++){
+        if(badInputSplit[i]==badWordsArray[j].badWord){
+            setAvailable(false)
+            alert(`${badWordsArray[j].badWord} is a bad word!`)
+            break;
+        }
+    }
+    }; 
+};
+
 const newMessage = () => {
+    const newMessage = getAvailable();
     setUserName();
     setMessageString(document.getElementById('input').value);
     setTimeStamp(moment().format('LT'));
     setIdCounter();
-    newMsg = {id: getIdCounter(), name: getUserName(), message: getMessageString(), time: getTimeStamp()};
-    pushNewMessage();
+    setAvailable();
+    newMsg = {id: getIdCounter(), name: getUserName(), message: getMessageString(), time: getTimeStamp(), available: getAvailable()};
+    if(newMessage){
+        pushNewMessage();
+    } 
 }
+
+
 
 const pushNewMessage = () => {
     let tempMsg = getMessagesz();
@@ -131,7 +171,6 @@ const deleteMessage = () => {
     }
     messagesBuilder(getMessagesz());
 }
-
 const emojisArray = {
     "happyFace": "😊", 
     "sadFace":"😔", 
@@ -140,15 +179,12 @@ const emojisArray = {
     "thumpsDown":"👎🏽", 
 };
 
-// let emojisArray = '';
-// const translatorLoop = (emojisArray) => {
-// outputString = '';
-// let inputText = document.getElementById('dropdownemojibtn').value.();
-
-
-
-// let emojisArray = document.getElementById('dropdownemojibtn');
-// emojisArray.addEventListener('click');
+let emojisArray = document.getElementById('dropdownemojibtn');
+emojisArray.addEventListener('click');
 
 
 export {getMessagesz, setMessages, messagesBuilder, saveEditMessage, beginEditMessage, deleteMessage};
+
+
+export {getMessagesz, setMessages, messagesBuilder, saveEditMessage, beginEditMessage, deleteMessage, setBadWords, getBadWordsz,badWordInput};
+
