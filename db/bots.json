@@ -2,43 +2,8 @@
     "bots": [
         {
             "name": "DoggoBot",
-            "hear": ["How are you?", "What's your favorite food?", "Who's a good bot?"],
-            "response": ["Woof woof!", "Woof woof?  Woof woof woof!", "WOOF WOOF WOOF!!"]
-        },
-        {
-            "name": "BroBot",
-            "hear": ["Woof woof!", "What's your favorite food?", "What's up man?"],
-            "response": ["Hey dog, be a brah and fetch me a brewski.", "Burgers and beerskies breh!", "Just throwin some beers back with the bros before the game bro"]
-        },
-        {
-            "name": "GrandmaBot",
-            "hear": [],
-            "response": []
-        },
-        {
-            "name": "CletusBot",
-            "hear": [],
-            "response": []
-        },
-        {
-            "name": "Totally Not a Russian AgentBot",
-            "hear": [],
-            "response": []
-        },
-        {
-            "name": "FellowHuman",
-            "hear": [],
-            "response": []
-        },
-        {
-            "name": "Big Bot and Andre 3000",
-            "hear": [],
-            "response": []
-        },
-        {
-            "name": "HAL 5000",
-            "hear": [],
-            "response": []
+            "hear": ["How are you?", "Do you want to ride in the car?", "Who's a good bot?", "Why do you smell like skunk?", "Do you want some bacon?"],
+            "response": ["Woof woof!", "Woof woof?  Woof woof woof!", "WOOF WOOF WOOF!!", "Arf arf?", "Awoooo awoooo!"]
         }
     ]
 }
