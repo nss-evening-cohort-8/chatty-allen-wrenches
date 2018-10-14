@@ -121,7 +121,6 @@ const newMessage = () => {
 }
 
 
-
 const pushNewMessage = () => {
     let tempMsg = getMessagesz();
     tempMsg.push(newMsg);
@@ -171,8 +170,16 @@ const deleteMessage = () => {
     }
     messagesBuilder(getMessagesz());
 }
+ //const emojisArray = {
+   // "happyFace": "😊", 
+    //"sadFace":"😔", 
+    //"taco":"🌮", 
+    //"thumpsUp":"👍🏽", 
+    //"thumpsDown":"👎🏽", 
 
 
-
+//let emojiSelected = document.getElementById('dropdownemojibtn');
+// emojiSelected.addEventListener('click');
 
 export {getMessagesz, setMessages, messagesBuilder, saveEditMessage, beginEditMessage, deleteMessage, setBadWords, getBadWordsz,badWordInput};
+
