@@ -8,16 +8,16 @@
     <title>The Chatroom</title>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light justify-content-center" id='nav'>
+        <br>
+        <a class="navbar-brand" ></a href="#"></a>
+        <img id="chatLogo" src="images/Chatterbox.png" width="280" height="150"/>
+    </nav>
     <div id="bigDiv" class="col-8 offset-md-2 d-flex justify-content-around">
         <div id='chatBox'>
             <div id="messages"></div>
         </div>
     </div>
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-            Customize Theme
-          </button>
-          <!-- Modal -->
           <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
@@ -64,7 +64,10 @@
         <button class="btn btn-rounded btn-dark" id="darkTheme">Dark Theme</button>
         <button class="btn btn-rounded btn-secondary" id="largeText">Large Text</button>
         <!-- <button class="btn btn-rounded btn-primary" data-toggle="modal" data-target="modalTarget" id="customTheme">Customize Theme</button> -->
-       
+       <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Customize Theme</button>
+        <!-- Modal -->
+        <button class="btn btn-rounded btn-success" id="ausMode">Australian Mode</button>
         <button class="btn btn-rounded btn-danger" id="clearMessages">Clear Message Board</button>
     </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -73,6 +76,7 @@
     <script src="javascripts/moment-with-locales.js"></script>
     <script src="javascripts/helpers/util.js" type="module"></script>
     <script src="javascripts/components/chatcomponent.js" type="module"></script>
+    <script src="javascripts/components/chatbot.js" type="module"></script>
     <script src="javascripts/eventlisteners.js" type="module"></script>
     <script src="javascripts/main.js" type="module"></script>
 </body>

@@ -1,4 +1,3 @@
-
 import{printToDom, printToDomEdit} from '../helpers/util.js';
 import { editEvent, deleteEvent } from '../eventlisteners.js';
 
@@ -22,16 +21,26 @@ const getIdCounter = () => {
     return idCounter;
 }
 
-const setUserName = () => {
+const setUserName = (source) => {
+    if(source.responding === 'yes') {
+        userName = source.name;
+    }
+    else {
     userName = document.getElementById('inputUserNames')[document.getElementById('inputUserNames').selectedIndex].value;
+    }
 }
 
 const getUserName = () => {
     return userName;
 }
 
-const setMessageString = (newValue) => {
-    messageString = newValue;
+const setMessageString = (source) => {
+    if(source.responding === 'yes') {
+        messageString = source.currentResponse;
+    }
+    else {
+    messageString = source;
+    }
 }
 
 const getMessageString = () => {
@@ -70,15 +79,15 @@ const getMessagesz = () => {
     return messagesArray;
 }
 
-const messagesBuilder = (messagesArray) => {
+const messagesBuilder = (messageArray) => {
     let newString = '';
-    for(let i=0; i<messagesArray.length;i++){
+    for(let i=0; i<messageArray.length;i++){
     //newString+= `<div class="border border-primary">`;
     newString += `<div class="col-12 d-flex justify-content-center border border-bottom-1 rounded messageDiv" id="${messagesArray[i].id}">`
     // newString+= `<div class="d-flex justify-content-around">`;
     newString+= `<p class="nameClass flex-fill font-weight-bold nameText">${messagesArray[i].name}:</p>`;
     newString+= `<p class="card-title flex-fill messageText" id="messageId${[i]}">${messagesArray[i].message}</p>`;
-    newString+= `<p class="card-title flex-fill font-weight-light">${messagesArray[i].time}</p>`;
+    newString+= `<p class="card-title flex-fill font-weight-light timeText">${messagesArray[i].time}</p>`;
     newString+= `<button type="button" class="btn btn-primary btn-sm editButton" id="editButton">Edit</button>`
     newString+= `<button type="button" class="btn btn-secondary btn-sm deleteButton" id="deleteButton">Delete</button>`
     // newString+= `</div>`;
@@ -107,15 +116,15 @@ let badWordInput = () => {
     }; 
 };
 
-const newMessage = () => {
-    const newMessage = getAvailable();
-    setUserName();
-    setMessageString(document.getElementById('input').value);
+const newMessage = (source) => {
+    const availability = getAvailable();
+    setUserName(source);
+    setMessageString(source);
     setTimeStamp(moment().format('LT'));
     setIdCounter();
     setAvailable();
     newMsg = {id: getIdCounter(), name: getUserName(), message: getMessageString(), time: getTimeStamp(), available: getAvailable()};
-    if(newMessage){
+    if(availability){
         pushNewMessage();
     } 
 }
@@ -155,15 +164,13 @@ const saveEditMessage = () => {
         }
     }
     else {
-        newMessage();
+        newMessage(document.getElementById('input').value);
     }
 }
 
 const deleteMessage = () => {
     let deleteMe = event.target.closest('.messageDiv').id;
-    console.log('deleteMe', deleteMe);
     for(let i = 0; i < messagesArray.length; i++) {
-        console.log('messagesArray', messagesArray[i]);
         if(messagesArray[i].id == deleteMe) {
             messagesArray.splice(i, 1);
             break;
@@ -172,7 +179,4 @@ const deleteMessage = () => {
     messagesBuilder(getMessagesz());
 }
 
-
-
-
-export {getMessagesz, setMessages, messagesBuilder, saveEditMessage, beginEditMessage, deleteMessage, setBadWords, getBadWordsz,badWordInput};
+export {getMessagesz, setMessages, messagesBuilder, saveEditMessage, beginEditMessage, deleteMessage, setBadWords, getBadWordsz, badWordInput, newMessage};

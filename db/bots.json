@@ -1,0 +1,9 @@
+{
+    "bots": [
+        {
+            "name": "DoggoBot",
+            "hear": ["How are you?", "Do you want to ride in the car?", "Who's a good bot?", "Why do you smell like skunk?", "Do you want some bacon?"],
+            "response": ["Woof woof!", "Woof woof?  Woof woof woof!", "WOOF WOOF WOOF!!", "Arf arf?", "Awoooo awoooo!"]
+        }
+    ]
+}

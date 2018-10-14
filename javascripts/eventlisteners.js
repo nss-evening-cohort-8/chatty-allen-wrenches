@@ -1,5 +1,5 @@
-import {saveEditMessage, messagesBuilder, getMessagesz, setMessages, beginEditMessage, deleteMessage,badWordInput} from './components/chatcomponent.js';
-
+import {getBotArray} from './components/chatbot.js';
+import {saveEditMessage, messagesBuilder, getMessagesz, setMessages, beginEditMessage, deleteMessage, badWordInput} from './components/chatcomponent.js';
 
 const messageSubmit = () => {
     document.getElementById('inputForm').addEventListener('submit', function() {
@@ -7,7 +7,6 @@ const messageSubmit = () => {
         event.preventDefault();
         saveEditMessage();
         messagesBuilder(getMessagesz());
-        
         document.getElementById('input').value = '';
     })
 }
@@ -35,6 +34,7 @@ const makeBubbleGum = () => {
         if (optionArray[1].selected) {
             document.body.style.background = "#f02fb6";
             document.getElementById('messages').style.background = "#e773c4";
+            document.getElementById('chatBox').style.background = "#e773c4";
             document.getElementById('messages').style.color = "white";
 
         }
@@ -46,6 +46,7 @@ const makeFrost = () => {
         if (optionArray[2].selected) {
             document.body.style.background = "#0955c7";
             document.getElementById('messages').style.background = "#6be1ff";
+            document.getElementById('chatBox').style.background = "#6be1ff";
             document.getElementById('messages').style.color = "white";
 
         }
@@ -57,6 +58,7 @@ const makeFire = () => {
         if (optionArray[3].selected) {
             document.body.style.background = "#ca0303";
             document.getElementById('messages').style.background = "#fd3f32";
+            document.getElementById('chatBox').style.background = "#fd3f32";
             document.getElementById('messages').style.color = "white";
 
         }
@@ -68,6 +70,7 @@ const makeGreen = () => {
         if (optionArray[4].selected) {
             document.body.style.background = "#00a008";
             document.getElementById('messages').style.background = "#1adb00";
+            document.getElementById('chatBox').style.background = "#1adb00";
             document.getElementById('messages').style.color = "white";
 
         }
@@ -79,6 +82,7 @@ const makeRoyal = () => {
         if (optionArray[5].selected) {
             document.body.style.background = "#7b00ce";
             document.getElementById('messages').style.background = "#9c1ef0";
+            document.getElementById('chatBox').style.background = "#9c1ef0";
             document.getElementById('messages').style.color = "white";
 
         }
@@ -91,6 +95,17 @@ const makeTextLarge = () => {
     })
 }
 
+const australiaMode = () => {
+    document.getElementById('ausMode').addEventListener("click", (e) => {
+        document.body.style.background = "#00843D";
+            document.getElementById('messages').style.background = "#FFCD00";
+            document.getElementById('chatBox').style.background = "#FFCD00";
+            document.getElementById('messages').style.color = "white";
+            ['', '-ms-', '-webkit-', '-o-', '-moz-'].map(function(prefix){
+                document.body.style[prefix + 'transform'] = 'rotate(180deg)';
+            });
+    })
+}
 const clearMessages = () => {
     const clearMessagesButton = document.getElementById('clearMessages');
     clearMessagesButton.addEventListener("click", (e) => {
@@ -118,5 +133,26 @@ const deleteEvent = () => {
         })
     }
 }
+const botObserver = () => {
+    const observerCallBack = function(mutationsList) {
+        for(const mutation of mutationsList) {
+            if (mutation.type == 'childList') {
+                let arrayLast = getMessagesz().length - 1;
+                let lastMessage = getMessagesz()[arrayLast].message;
+                let botsArray = getBotArray();
+                for(let i = 0; i < botsArray.length; i++) {
+                    let correctIndex = botsArray[i].hear.indexOf(lastMessage)
+                    if(correctIndex !== -1) {
+                        botsArray[i].receive();
+                        botsArray[i].currentResponse = botsArray[i].response[correctIndex];
+                        botsArray[i].say();
+                    }
+                }
+            }        
+        }
+    };
+    const observer = new MutationObserver(observerCallBack);
+    observer.observe(document.getElementById('messages'), {childList: true});
+}
 
-export {messageSubmit, messageSubmitClick, clearMessages, makeDark, makeTextLarge, editEvent, deleteEvent, makeBubbleGum, makeFrost, makeFire, makeGreen, makeRoyal};
+export {messageSubmit, messageSubmitClick, clearMessages, makeDark, makeTextLarge, editEvent, deleteEvent, makeBubbleGum, makeFrost, makeFire, makeGreen, makeRoyal, botObserver,  australiaMode};
