@@ -25,10 +25,9 @@ form {
 }
 
 #chatBox {
-    margin-top: 50px;
     border: solid black 1px;
     width: 100%;
-    height: 65%;
+    height: 55%;
     overflow: scroll;
 }
 
