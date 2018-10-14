@@ -20,3 +20,31 @@ Your group has been designated a product owner (one of the instructors). This pr
 
 
 Check out the [simple wireframe](https://app.moqups.com/chortlehoort/uGBbLbK46Y/view/page/a3bd0c733) for this application on Moqups.com. You can make your final interface as fancy as you like, but keep the general layout similar to the wireframe.
+
+## Screenshots
+![main screenshot](javascripts/images/Frost.png)
+
+
+![main screenshot](javascripts/images/bubblegum.png)
+
+
+![main screenshot](javascripts/images/chatterbox.png)
+
+## How to run this project
+
+
+* Use npm to instal http-server : 
+``` 
+npm install -g http-server
+
+````
+* Run the server
+
+``` sh
+hs  -p 9999
+```
+* Open Chrome and navaigate to: 
+```
+localhost: 8080
+```http://127.0.0.1:8080/
+``` js
