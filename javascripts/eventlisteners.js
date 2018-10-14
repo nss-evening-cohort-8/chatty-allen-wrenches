@@ -18,7 +18,7 @@ const messageSubmit = () => {
             outputString += `${ emojisArray[inputArray[i]]}`;
             outputString += "  ";
         };
-    }
+    }  
     });
 }
 
