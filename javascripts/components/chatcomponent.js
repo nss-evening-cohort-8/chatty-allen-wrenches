@@ -3,7 +3,9 @@ import { editEvent, deleteEvent } from '../eventlisteners.js';
 
 let messagesArray=[];
 let badWordsArray=[];
-
+let emojis = {};
+let emojifiedString = '';
+let emojiKeys = [];
 let userName = '';
 let messageString = '';
 let timeStamp = '';
@@ -12,6 +14,17 @@ let editing = 'no';
 let available=true;
 let newMsg;
 let themeOption = '';
+
+const setEmojis = (data) => {
+    emojis = data;
+    for(let i = 0; i < emojis.length; i++) {
+        emojiKeys.push(Object.keys(emojis[i]));
+    }
+}
+
+const getEmoji = () => {
+    return emojis;
+}
 
 const setIdCounter = () => {
     idCounter++;
@@ -116,6 +129,22 @@ let badWordInput = () => {
     }; 
 };
 
+const emojisInput = () => {
+    let emojiSplit = document.getElementById('input').value.split(' ');
+    for(let i = 0; i < emojiSplit.length; i++) {
+        for(let j = 0; j < emojiKeys.length; j++) {
+            console.log(emojiKeys[j]);
+            console.log(emojiSplit[i]);
+            if(emojiSplit[i] == emojiKeys[j]) {
+                console.log('it worked');
+                emojiSplit.splice(i, 1, emojis[j][emojiKeys[j]]);
+            }
+        }
+    }
+    emojifiedString = emojiSplit.join(' ');
+    document.getElementById('input').value = emojifiedString;
+}
+
 const newMessage = (source) => {
     const availability = getAvailable();
     setUserName(source);
@@ -179,4 +208,4 @@ const deleteMessage = () => {
     messagesBuilder(getMessagesz());
 }
 
-export {getMessagesz, setMessages, messagesBuilder, saveEditMessage, beginEditMessage, deleteMessage, setBadWords, getBadWordsz, badWordInput, newMessage};
+export {getMessagesz, setMessages, messagesBuilder, saveEditMessage, beginEditMessage, deleteMessage, setBadWords, getBadWordsz, badWordInput, newMessage, setEmojis, getEmoji, emojisInput};
