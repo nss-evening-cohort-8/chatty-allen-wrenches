@@ -1,8 +1,9 @@
-import{setEmojis, getEmoji} from '../components/chatcomponent.js';
+import{setEmojis, getEmoji, emojiBuilder, getEmojiKeys} from '../components/chatcomponent.js';
 
 function executeThisCodeAfterFileLoaded () {
     const data = JSON.parse(this.responseText);
     setEmojis(data.emojis);
+    emojiBuilder(getEmoji(), getEmojiKeys());
 }
 
 function executeThisCodeIfXhrFails () {

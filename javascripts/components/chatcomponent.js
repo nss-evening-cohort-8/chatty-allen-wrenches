@@ -1,5 +1,6 @@
-import{printToDom, printToDomEdit} from '../helpers/util.js';
+import{printToDom, printToDomEdit, printEmojis} from '../helpers/util.js';
 import { editEvent, deleteEvent } from '../eventlisteners.js';
+import {getSelectedGif} from './gifs.js';
 
 let messagesArray=[];
 let badWordsArray=[];
@@ -24,6 +25,10 @@ const setEmojis = (data) => {
 
 const getEmoji = () => {
     return emojis;
+}
+
+const getEmojiKeys = () => {
+    return emojiKeys;
 }
 
 const setIdCounter = () => {
@@ -99,11 +104,18 @@ const messagesBuilder = (messageArray) => {
     newString += `<div class="col-12 d-flex justify-content-center border border-bottom-1 rounded messageDiv" id="${messagesArray[i].id}">`
     // newString+= `<div class="d-flex justify-content-around">`;
     newString+= `<p class="nameClass flex-fill font-weight-bold nameText">${messagesArray[i].name}:</p>`;
-    newString+= `<p class="card-title flex-fill messageText" id="messageId${[i]}">${messagesArray[i].message}</p>`;
+    if(messageArray[i].gif !== undefined && messageArray[i].gif !== '') {
+        newString+= `<p class="card-title flex-fill messageTextwImage" id="messageId${[i]}">${messagesArray[i].message}</p>`;
+    }
+    else {
+        newString+= `<p class="card-title flex-fill messageText" id="messageId${[i]}">${messagesArray[i].message}</p>`;
+    }
+    if(messageArray[i].gif !== undefined && messageArray[i].gif !== '') {
+        newString+= `<image src=${messageArray[i].gif} class='gifImageChosen'>`
+    }   
     newString+= `<p class="card-title flex-fill font-weight-light timeText">${messagesArray[i].time}</p>`;
     newString+= `<button type="button" class="btn btn-primary btn-sm editButton" id="editButton">Edit</button>`
     newString+= `<button type="button" class="btn btn-secondary btn-sm deleteButton" id="deleteButton">Delete</button>`
-    // newString+= `</div>`;
 
     newString+= `</div>`;
 
@@ -112,6 +124,17 @@ const messagesBuilder = (messageArray) => {
     printToDomEdit(newString,'messages');
     editEvent();
     deleteEvent();
+}
+
+const emojiBuilder = (emojis, emojiKeys) => {
+    let emojiString = '';
+    for(let i = 0; i <emojis.length; i++) {
+        emojiString +=  `<div class='col-2 emojiCol'>`
+        emojiString +=      `<p>${emojiKeys[i]}</p>`
+        emojiString +=      `<p>${emojis[i][emojiKeys[i][0]]}</p>`
+        emojiString +=  `</div>`
+    }
+    printEmojis(emojiString);
 }
 
 let badWordInput = () => {
@@ -133,8 +156,6 @@ const emojisInput = () => {
     let emojiSplit = document.getElementById('input').value.split(' ');
     for(let i = 0; i < emojiSplit.length; i++) {
         for(let j = 0; j < emojiKeys.length; j++) {
-            console.log(emojiKeys[j]);
-            console.log(emojiSplit[i]);
             if(emojiSplit[i] == emojiKeys[j]) {
                 console.log('it worked');
                 emojiSplit.splice(i, 1, emojis[j][emojiKeys[j]]);
@@ -152,13 +173,11 @@ const newMessage = (source) => {
     setTimeStamp(moment().format('LT'));
     setIdCounter();
     setAvailable();
-    newMsg = {id: getIdCounter(), name: getUserName(), message: getMessageString(), time: getTimeStamp(), available: getAvailable()};
+    newMsg = {id: getIdCounter(), name: getUserName(), message: getMessageString(), time: getTimeStamp(), available: getAvailable(), gif: getSelectedGif()};
     if(availability){
         pushNewMessage();
     } 
 }
-
-
 
 const pushNewMessage = () => {
     let tempMsg = getMessagesz();
@@ -208,4 +227,4 @@ const deleteMessage = () => {
     messagesBuilder(getMessagesz());
 }
 
-export {getMessagesz, setMessages, messagesBuilder, saveEditMessage, beginEditMessage, deleteMessage, setBadWords, getBadWordsz, badWordInput, newMessage, setEmojis, getEmoji, emojisInput};
+export {getMessagesz, setMessages, messagesBuilder, saveEditMessage, beginEditMessage, deleteMessage, setBadWords, getBadWordsz, badWordInput, newMessage, setEmojis, getEmoji, emojisInput, emojiBuilder, getEmojiKeys};

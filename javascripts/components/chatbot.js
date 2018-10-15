@@ -20,7 +20,7 @@ const getBot = (theBot) => {
 }
 
 const random = () => {
-    return (Math.floor(Math.random() * 3) + 3);
+    return (Math.floor(Math.random() * 5) + 7);
 }
 
 const delayedBuilder = () => {

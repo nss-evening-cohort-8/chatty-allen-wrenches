@@ -1,5 +1,9 @@
 import {getBotArray} from './components/chatbot.js';
 import {saveEditMessage, messagesBuilder, getMessagesz, setMessages, beginEditMessage, deleteMessage, badWordInput, emojisInput} from './components/chatcomponent.js';
+import {getGifSearch, gifSearchInput, resetGif, setChosenGif, setSelectedGif} from './components/gifs.js';
+import {getGifs} from './data/gifData.js';
+
+let chosenGifImage;
 
 const messageSubmit = () => {
     document.getElementById('inputForm').addEventListener('submit', function() {
@@ -9,6 +13,7 @@ const messageSubmit = () => {
         saveEditMessage();
         messagesBuilder(getMessagesz());
         document.getElementById('input').value = '';
+        resetGif();
     })
 }
 
@@ -156,4 +161,30 @@ const botObserver = () => {
     observer.observe(document.getElementById('messages'), {childList: true});
 }
 
-export {messageSubmit, messageSubmitClick, clearMessages, makeDark, makeTextLarge, editEvent, deleteEvent, makeBubbleGum, makeFrost, makeFire, makeGreen, makeRoyal, botObserver,  australiaMode};
+const gifSearchEvent = () => {
+    document.getElementById('gifSearch').addEventListener('click', function() {
+        gifSearchInput(getGifSearch());
+        getGifs();
+    })
+}
+
+const gifImageEvent = () => {
+    document.getElementById('gifDisplayDiv').addEventListener('click', function() {
+        if(chosenGifImage !== undefined) {
+        chosenGifImage.style.border = 'none';
+        }
+        chosenGifImage = event.target;
+        if(chosenGifImage.className === 'gifImage') {
+            setChosenGif(event.target.id);
+            chosenGifImage.style.border = 'solid red 2.5px';
+        }
+    })
+}
+
+const gifSelectEvent = () => {
+    document.getElementById('gifChoose').addEventListener('click', function() {
+        setSelectedGif();
+    })
+}
+
+export {messageSubmit, messageSubmitClick, clearMessages, makeDark, makeTextLarge, editEvent, deleteEvent, makeBubbleGum, makeFrost, makeFire, makeGreen, makeRoyal, botObserver,  australiaMode, gifSearchEvent, gifImageEvent, gifSelectEvent};
