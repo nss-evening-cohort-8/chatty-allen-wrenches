@@ -12,4 +12,8 @@ const printGif = (stringToPrint) => {
     document.getElementById('gifDisplayDiv').innerHTML = stringToPrint;
 }
 
-export {printToDom, printToDomEdit, printGif};
+const printEmojis = (stringToPrint) => {
+    document.getElementById('emojiDiv').innerHTML = stringToPrint;
+}
+
+export {printToDom, printToDomEdit, printGif, printEmojis};

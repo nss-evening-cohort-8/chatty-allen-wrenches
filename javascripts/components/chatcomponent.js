@@ -1,4 +1,4 @@
-import{printToDom, printToDomEdit} from '../helpers/util.js';
+import{printToDom, printToDomEdit, printEmojis} from '../helpers/util.js';
 import { editEvent, deleteEvent } from '../eventlisteners.js';
 import {getSelectedGif} from './gifs.js';
 
@@ -25,6 +25,10 @@ const setEmojis = (data) => {
 
 const getEmoji = () => {
     return emojis;
+}
+
+const getEmojiKeys = () => {
+    return emojiKeys;
 }
 
 const setIdCounter = () => {
@@ -96,7 +100,6 @@ const getMessagesz = () => {
 const messagesBuilder = (messageArray) => {
     let newString = '';
     for(let i=0; i<messageArray.length;i++){
-        console.log(messageArray[i]);
     //newString+= `<div class="border border-primary">`;
     newString += `<div class="col-12 d-flex justify-content-center border border-bottom-1 rounded messageDiv" id="${messagesArray[i].id}">`
     // newString+= `<div class="d-flex justify-content-around">`;
@@ -121,6 +124,17 @@ const messagesBuilder = (messageArray) => {
     printToDomEdit(newString,'messages');
     editEvent();
     deleteEvent();
+}
+
+const emojiBuilder = (emojis, emojiKeys) => {
+    let emojiString = '';
+    for(let i = 0; i <emojis.length; i++) {
+        emojiString +=  `<div class='col-2 emojiCol'>`
+        emojiString +=      `<p>${emojiKeys[i]}</p>`
+        emojiString +=      `<p>${emojis[i][emojiKeys[i][0]]}</p>`
+        emojiString +=  `</div>`
+    }
+    printEmojis(emojiString);
 }
 
 let badWordInput = () => {
@@ -164,8 +178,6 @@ const newMessage = (source) => {
         pushNewMessage();
     } 
 }
-
-
 
 const pushNewMessage = () => {
     let tempMsg = getMessagesz();
@@ -215,4 +227,4 @@ const deleteMessage = () => {
     messagesBuilder(getMessagesz());
 }
 
-export {getMessagesz, setMessages, messagesBuilder, saveEditMessage, beginEditMessage, deleteMessage, setBadWords, getBadWordsz, badWordInput, newMessage, setEmojis, getEmoji, emojisInput};
+export {getMessagesz, setMessages, messagesBuilder, saveEditMessage, beginEditMessage, deleteMessage, setBadWords, getBadWordsz, badWordInput, newMessage, setEmojis, getEmoji, emojisInput, emojiBuilder, getEmojiKeys};
