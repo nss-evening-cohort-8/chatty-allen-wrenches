@@ -20,10 +20,6 @@ footer {
     font-size: 35px;
 }
 
-#sendButton {
-    height: 30px;
-}
-
 form {
     margin-bottom: 0;
 }
@@ -31,19 +27,64 @@ form {
 #chatBox {
     border: solid black 1px;
     width: 100%;
-    height: 500px;
+    height: 55%;
     overflow: scroll;
 }
 
 .messageText {
     width: 45%;
     margin-right: 5%;
+    padding-top: 12px;
+}
+
+.messageTextwImage {
+    width: 35%;
+    margin-right: 5%;
+    padding-top: 12px;
 }
 
 .nameText {
     width: 5%;
+    padding-top: 12px;
+}
+
+.timeText {
+    padding-top: 12px;
 }
 
 .btn {
     max-height: 40px;
+    margin-top: 5px;
+}
+
+#sendButton, #gifButton {
+    max-height: 100%;
+}
+
+#modalText {
+    margin-left: 10%;
+    margin-top: 1%;
+}
+
+#gifInput {
+    width: 80%;
+}
+
+#numberPar, #numberInput {
+    display: inline;
+    margin-left: 18.3%;
+}
+
+.gifImage {
+    height: 100px;
+    width: 100px;
+    margin: 1%;
+}
+
+.gifImageChosen {
+    height: 100px;
+    width: 100px;
+    margin-left: -5%;
+    margin-right: 5%;
+    margin-top: 2%;
 }

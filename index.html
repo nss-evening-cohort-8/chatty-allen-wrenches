@@ -5,29 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="main.css">
-    <title>The Chatroom</title>
+    <title>Chatterbox</title>
 </head>
 
-<div class="container">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
-    <br>
-    <a class="navbar-brand" ></a href="#">ChatterBox</a>
-    <img id="chatLogo" src="javascripts/images/chatty logo.png" width="280" height="150"/>
-  </nav>
-</div>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light justify-content-center" id='nav'>
+        <br>
+        <a class="navbar-brand" ></a href="#"></a>
+        <img id="chatLogo" src="images/Chatterbox.png" width="280" height="150"/>
+    </nav>
     <div id="bigDiv" class="col-8 offset-md-2 d-flex justify-content-around">
         <div id='chatBox'>
             <div id="messages"></div>
         </div>
 
     </div>
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-            Customize Theme
-          </button>
-          <!-- Modal -->
           <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
@@ -54,6 +47,52 @@
               </div>
             </div>
           </div>
+          <div class="modal fade" id="gifModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Gif Selector</h5>
+                  <p id='modalText'>Enter a search term below</p>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body text-center">
+                    <input type="text" id='gifInput'>
+                    <div id='numberDiv'>
+                        <p id='numberPar'>Number of Results</p>
+                        <input type="number" id='numberInput' min="1" max="20">
+                    </div>  
+                    <div id='gifDisplayDiv'></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" id="gifSearch">Search</button>  
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="gifChoose" data-dismiss="modal">Select Gif</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="emojiModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Emoji Commands</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class='container'>
+                        <div id='emojiDiv' class='row'></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
     <footer class="fixed-bottom container-fluid text-center">
         <div class="container justify-content-center mb-3">
             <div class='row'>
@@ -65,16 +104,21 @@
                     <option value="Rob">Rob</option>
                     <option value="Zoe">Zoe</option>
                 </select>
-                <form id='inputForm' class='col-10'>
+                <form id='inputForm' class='col-9'>
                     <input class="form-control form-control-lg col" id='input' type="text" placeholder="Type here...">
                 </form>
-                <button class="btn btn-rounded btn-info mr-1 ml-1"id="sendButton">Send</button> 
+                <button class="btn btn-rounded btn-info mr-1 ml-1"id="sendButton">Send</button>
+                <button class="btn btn-rounded btn-info mr-1 ml-1"id="gifButton" data-toggle="modal" data-target="#gifModal">Find Gifs</button>
             </div>
         </div>
+        <button class="btn btn-rounded btn-dark" id="emojiButton" data-toggle="modal" data-target="#emojiModal">Emoji Commands</button>
         <button class="btn btn-rounded btn-dark" id="darkTheme">Dark Theme</button>
         <button class="btn btn-rounded btn-secondary" id="largeText">Large Text</button>
         <!-- <button class="btn btn-rounded btn-primary" data-toggle="modal" data-target="modalTarget" id="customTheme">Customize Theme</button> -->
-       
+       <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Customize Theme</button>
+        <!-- Modal -->
+        <button class="btn btn-rounded btn-success" id="ausMode">Australian Mode</button>
         <button class="btn btn-rounded btn-danger" id="clearMessages">Clear Message Board</button>
         
         
@@ -99,6 +143,7 @@
     <script src="javascripts/moment-with-locales.js"></script>
     <script src="javascripts/helpers/util.js" type="module"></script>
     <script src="javascripts/components/chatcomponent.js" type="module"></script>
+    <script src="javascripts/components/chatbot.js" type="module"></script>
     <script src="javascripts/eventlisteners.js" type="module"></script>
     <script src="javascripts/main.js" type="module"></script>
 </body>
