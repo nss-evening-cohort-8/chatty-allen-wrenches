@@ -3,6 +3,8 @@ import {saveEditMessage, messagesBuilder, getMessagesz, setMessages, beginEditMe
 import {getGifSearch, gifSearchInput, resetGif, setChosenGif, setSelectedGif} from './components/gifs.js';
 import {getGifs} from './data/gifData.js';
 
+let chosenGifImage;
+
 const messageSubmit = () => {
     document.getElementById('inputForm').addEventListener('submit', function() {
         emojisInput();
@@ -168,10 +170,13 @@ const gifSearchEvent = () => {
 
 const gifImageEvent = () => {
     document.getElementById('gifDisplayDiv').addEventListener('click', function() {
-        let chosenGif = event.target;
-        if(chosenGif.className === 'gifImage') {
+        if(chosenGifImage !== undefined) {
+        chosenGifImage.style.border = 'none';
+        }
+        chosenGifImage = event.target;
+        if(chosenGifImage.className === 'gifImage') {
             setChosenGif(event.target.id);
-            chosenGif.style.border = 'solid black 2.5px';
+            chosenGifImage.style.border = 'solid red 2.5px';
         }
     })
 }

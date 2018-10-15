@@ -37,6 +37,12 @@ form {
     padding-top: 12px;
 }
 
+.messageTextwImage {
+    width: 35%;
+    margin-right: 5%;
+    padding-top: 12px;
+}
+
 .nameText {
     width: 5%;
     padding-top: 12px;
@@ -78,4 +84,7 @@ form {
 .gifImageChosen {
     height: 100px;
     width: 100px;
+    margin-left: -5%;
+    margin-right: 5%;
+    margin-top: 2%;
 }
