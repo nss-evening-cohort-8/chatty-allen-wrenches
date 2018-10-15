@@ -51,6 +51,31 @@ form {
     margin-top: 5px;
 }
 
-#sendButton {
+#sendButton, #gifButton {
     max-height: 100%;
+}
+
+#modalText {
+    margin-left: 10%;
+    margin-top: 1%;
+}
+
+#gifInput {
+    width: 80%;
+}
+
+#numberPar, #numberInput {
+    display: inline;
+    margin-left: 18.3%;
+}
+
+.gifImage {
+    height: 100px;
+    width: 100px;
+    margin: 1%;
+}
+
+.gifImageChosen {
+    height: 100px;
+    width: 100px;
 }

@@ -1,5 +1,6 @@
 import{printToDom, printToDomEdit} from '../helpers/util.js';
 import { editEvent, deleteEvent } from '../eventlisteners.js';
+import {getSelectedGif} from './gifs.js';
 
 let messagesArray=[];
 let badWordsArray=[];
@@ -95,15 +96,18 @@ const getMessagesz = () => {
 const messagesBuilder = (messageArray) => {
     let newString = '';
     for(let i=0; i<messageArray.length;i++){
+        console.log(messageArray[i]);
     //newString+= `<div class="border border-primary">`;
     newString += `<div class="col-12 d-flex justify-content-center border border-bottom-1 rounded messageDiv" id="${messagesArray[i].id}">`
     // newString+= `<div class="d-flex justify-content-around">`;
     newString+= `<p class="nameClass flex-fill font-weight-bold nameText">${messagesArray[i].name}:</p>`;
     newString+= `<p class="card-title flex-fill messageText" id="messageId${[i]}">${messagesArray[i].message}</p>`;
+    if(messageArray[i].gif !== undefined && messageArray[i].gif !== '') {
+        newString+= `<image src=${messageArray[i].gif} class='gifImageChosen'>`
+    }   
     newString+= `<p class="card-title flex-fill font-weight-light timeText">${messagesArray[i].time}</p>`;
     newString+= `<button type="button" class="btn btn-primary btn-sm editButton" id="editButton">Edit</button>`
     newString+= `<button type="button" class="btn btn-secondary btn-sm deleteButton" id="deleteButton">Delete</button>`
-    // newString+= `</div>`;
 
     newString+= `</div>`;
 
@@ -133,8 +137,6 @@ const emojisInput = () => {
     let emojiSplit = document.getElementById('input').value.split(' ');
     for(let i = 0; i < emojiSplit.length; i++) {
         for(let j = 0; j < emojiKeys.length; j++) {
-            console.log(emojiKeys[j]);
-            console.log(emojiSplit[i]);
             if(emojiSplit[i] == emojiKeys[j]) {
                 console.log('it worked');
                 emojiSplit.splice(i, 1, emojis[j][emojiKeys[j]]);
@@ -152,7 +154,7 @@ const newMessage = (source) => {
     setTimeStamp(moment().format('LT'));
     setIdCounter();
     setAvailable();
-    newMsg = {id: getIdCounter(), name: getUserName(), message: getMessageString(), time: getTimeStamp(), available: getAvailable()};
+    newMsg = {id: getIdCounter(), name: getUserName(), message: getMessageString(), time: getTimeStamp(), available: getAvailable(), gif: getSelectedGif()};
     if(availability){
         pushNewMessage();
     } 
