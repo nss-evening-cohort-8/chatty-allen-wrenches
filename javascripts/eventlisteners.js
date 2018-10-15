@@ -1,8 +1,9 @@
 import {getBotArray} from './components/chatbot.js';
-import {saveEditMessage, messagesBuilder, getMessagesz, setMessages, beginEditMessage, deleteMessage, badWordInput} from './components/chatcomponent.js';
+import {saveEditMessage, messagesBuilder, getMessagesz, setMessages, beginEditMessage, deleteMessage, badWordInput, emojisInput} from './components/chatcomponent.js';
 
 const messageSubmit = () => {
     document.getElementById('inputForm').addEventListener('submit', function() {
+        emojisInput();
         badWordInput();
         event.preventDefault();
         saveEditMessage();
