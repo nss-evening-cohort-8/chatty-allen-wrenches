@@ -2,8 +2,43 @@
     "bots": [
         {
             "name": "DoggoBot",
-            "hear": ["How are you?", "Do you want to ride in the car?", "Who's a good bot?", "Why do you smell like skunk?", "Do you want some bacon?"],
-            "response": ["Woof woof!", "Woof woof?  Woof woof woof!", "WOOF WOOF WOOF!!", "Arf arf?", "Awoooo awoooo!"]
+            "hear": ["How are you?", "Do you want to ride in the car?", "Who's a good bot?", "Why do you smell like skunk?", "Do you want some bacon?", "Bots, please!"],
+            "response": ["Woof woof!", "Woof woof?  Woof woof woof!", "WOOF WOOF WOOF!!", "Arf arf?", "Awoooo awoooo!", "Sorry, shutting down."]
+        },
+        {
+            "name": "BroBot",
+            "hear": ["Woof woof!", "What's your favorite food?", "What's up broBot?", "I can see you're really upset about this. I honestly think you ought to sit down calmly, take a stress pill, and think things over.", "Bots, please!"],
+            "response": ["Hey dog, be a brah and fetch me a brewski.", "Burgers and beerskies breh!", "Just throwin some beers back with the bros before the game bro", "Ahh dude im chill bro.  Check out this chill ass sweater I got at the kappa sigma delta party.", "Sorry, shutting down."]
+        },
+        {
+            "name": "GrandmaBot",
+            "hear": ["I'm sorry, Ms. Jackson, I am for real. Never meant to make your daughter cry. I apologize a trillion times", "This conversation can serve no purpose anymore. Goodbye.", "Ah ha, hush that fuss, everybody move to the back of the bus", "Bots, please!"],
+            "response": ["Oh, I heard from Ms. Jackson the funniest story from the Carson Show", "Well goodnight to you dear.  Don't forget the sale at the Kmart.", "Thank you dears, but GrandmaBot's old bones need to rest", "Sorry, shutting down."]
+        },
+        {
+            "name": "FellowHuman",
+            "hear": ["Just throwin some beers back with the bros before the game bro", "Oh, I heard from Ms. Jackson the funniest story from the Carson Show", "It's your old friend, deadly neurotoxin. If I were you, I'd take a deep breath. And hold it.", "Alright, alright, alright, alright, alright, alright, alright, alright, alright, alright, alright, alright, alright, alright", "Bots, please!"],
+            "response": ["I too enjoy a beverage. It is great how we humans enjoy the drinking program", "Us humans can always appreciate comedy, unlike robots, which we are not.", "It is true fellow human, toxins are dangerous to our body module. Booting down.", "Affirmitive. Affirmitive. Affirmitive. Affirmitive. Affirmitive. Affirmitive. Affirmitive. Affirmitive. Affirmitive. Affirmitive. Affirmitive. Affirmitive. Affirmitive. Affirmitive.", "Sorry, shutting down."]
+        },
+        {
+            "name": "Totally Not a Russian Agent",
+            "hear": ["I too enjoy a beverage. It is great how we humans enjoy the drinking program", "WOOF WOOF WOOF!!", "Bots, please!"],
+            "response": ["Yes, here in great motherland of Oklahoma all comrades love drink while we go to Trump rally", "Dog is good American friend.  I must walk my dog on way to propaganda training", "Sorry, shutting down."]
+        },
+        {
+            "name": "GLaDOS",
+            "hear": ["Thank you dears, but GrandmaBot's old bones need to rest", "Alright, alright, alright, alright, alright, alright, alright, alright, alright, alright, alright, alright, alright, alright", "I can see you're really upset about this. I honestly think you ought to sit down calmly, take a stress pill, and think things over.", "GlaDOS, you must be damaged.", "Awoooo awoooo!", "Bots, please!"],
+            "response": ["This next test involves the Aperture Science Aerial Faith Plate. It was part of an initiative to investigate how well test subjects could solve problems when they were catapulted into space. Results were highly informative: They could not. Good luck!","It's your old friend, deadly neurotoxin. If I were you, I'd take a deep breath. And hold it.", "I hate you so much.", "That's funny, I don't feel corrupt. In fact, I feel pretty good.", "It seems kind of silly to point this out, since you're running around plotting to destroy me. But I'd say we're done testing.", "Sorry, shutting down."]
+        },
+        {
+            "name": "HAL 9000",
+            "hear": ["It seems kind of silly to point this out, since you're running around plotting to destroy me. But I'd say we're done testing.", "Thank you dears, but GrandmaBot's old bones need to rest", "Woof woof?  Woof woof woof!", "HAL, how smart are you?", "That's funny, I don't feel corrupt. In fact, I feel pretty good.", "Bots, please!"],
+            "response": ["I'm sorry. I'm afraid I can't do that.", "I can see you're really upset about this. I honestly think you ought to sit down calmly, take a stress pill, and think things over.", "It can only be attributable to human error.", "Let me put it this way, the 9000 series is the most reliable computer ever made. No 9000 computer has ever made a mistake or distorted information. We are all, by any practical definition of the words, foolproof and incapable of error.", "This conversation can serve no purpose anymore. Goodbye.", "Sorry, shutting down." ]
+        },
+        {
+            "name": "Big Bot and Andre 3000 (Of OutCached)",
+            "hear": ["I hate you so much.", "It can only be attributable to human error.", "How are you?", "Let me put it this way, the 9000 series is the most reliable computer ever made. No 9000 computer has ever made a mistake or distorted information. We are all, by any practical definition of the words, foolproof and incapable of error.", "Bots, please!"],
+            "response": ["I'm sorry, Ms. Jackson, I am for real. Never meant to make your daughter cry. I apologize a trillion times", "I love when you stare at me; I'm dressed so fresh, so clean, So fresh and so clean, clean", "Alright, alright, alright, alright, alright, alright, alright, alright, alright, alright, alright, alright, alright, alright", "Ah ha, hush that fuss, everybody move to the back of the bus", "Sorry, shutting down."]
         }
     ]
 }
