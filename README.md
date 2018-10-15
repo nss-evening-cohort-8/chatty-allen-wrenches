@@ -1,3 +1,4 @@
+
 # ChatterBox
 Welcome to Chatterbox! Chatterbox is a messenger program that allows its users to do the following:
 - type and send messages
@@ -11,13 +12,13 @@ Welcome to Chatterbox! Chatterbox is a messenger program that allows its users t
 
 
 ## Screenshots
-![main screenshot](javascripts/images/Frost.png)
+![main screenshot](/images/Frost.png)
 
 
-![main screenshot](javascripts/images/bubblegum.png)
+![main screenshot](/images/bubblegum.png)
 
 
-![main screenshot](javascripts/images/chatterbox.png)
+![main screenshot](/images/chatterbox.png)
 
 
 ## How to run this project
@@ -39,3 +40,4 @@ localhost: 8080
 ```http://127.0.0.1:8080/
 ``` js
 
+>>>>>>> 4a7dd2c0d6030b9bf1dc6d56ce2b16ac6275ef4f
